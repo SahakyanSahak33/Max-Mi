@@ -237,7 +237,7 @@ header{
     border-radius: 45%;
 }
 .header_signed_in{
-    display: none;
+    display: flex !important;
     height: 51px;
     width: 51px;
     justify-content: center;

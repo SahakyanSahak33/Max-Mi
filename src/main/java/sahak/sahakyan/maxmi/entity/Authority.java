@@ -22,4 +22,8 @@ public class Authority {
     @Column(name = "name")
     private String name;
 
+    public Authority(String name) {
+        this.name = name;
+    }
+
 }

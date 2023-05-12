@@ -29,6 +29,9 @@ CREATE TABLE user_authority (
                                 FOREIGN KEY (user_id) REFERENCES users(id),
                                 FOREIGN KEY (authority_id) REFERENCES authorities(id)
 );
+INSERT INTO `my_db`.`authorities` (`name`) VALUES ('USER');
+INSERT INTO `my_db`.`authorities` (`name`) VALUES ('ADMIN');
+
 /*
 CREATE TABLE `my_db`.`user_details` (
                                         `id` BIGINT NOT NULL AUTO_INCREMENT,

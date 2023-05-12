@@ -1,6 +1,7 @@
 package sahak.sahakyan.maxmi.entity;
 
 import lombok.*;
+import org.hibernate.annotations.GeneratorType;
 import sahak.sahakyan.maxmi.validator.CheckEmail;
 import sahak.sahakyan.maxmi.validator.Password;
 
@@ -19,7 +20,8 @@ import java.util.Set;
 @ToString
 public class User {
     @Id
-    @NotBlank(message = "User's username cannot be empty.")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     @Size(min = 3, max = 20)
     @Column(name = "username")
     String username;
@@ -29,15 +31,15 @@ public class User {
     String firstName;
     @NotBlank(message = "This input cannot be empty.")
     @Size(min = 3, max = 20)
-    @Column(name = "second_name")
+    @Column(name = "last_name")
     String lastName;
     @NotBlank
     @Pattern(regexp = "\\+\\d{3}-\\d{2}-\\d{3}-\\d{3}", message = "Please use pattern +XXX-XXX-XXX")
     @Column(name = "phone_number")
     String phoneNumber;
     @NotBlank
-    @CheckEmail
     @Column(name = "email", unique = true)
+    @CheckEmail
     String email;
     @NotBlank
     @Password
