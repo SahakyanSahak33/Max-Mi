@@ -90,15 +90,21 @@ public class MyController {
         User user = userService.findByUsername(name);
         System.out.println(user);
         if (user == null) {
+            System.out.println("user is Null !");
             return "redirect:/login-error";
         }
         String password = userDTO.getPassword();
+        System.out.println(user.getPassword());
+        System.out.println("--------------| AAAA |--------------------");
+        System.out.println(BCrypt.checkpw(password, user.getPassword()));
         if (BCrypt.checkpw(password, user.getPassword())) {
+            System.out.println("Password was true");
             ShopmeUserDetails userDetails = new ShopmeUserDetails(user);
             System.out.println(userDetails);
             model.addAttribute("userDetails", userDetails);
             return "redirect:/account/index";
         }
+        System.out.println("LOGIN - ERROR");
         return "redirect:/login-error";
     }
 

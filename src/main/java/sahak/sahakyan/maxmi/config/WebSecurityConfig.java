@@ -28,17 +28,14 @@ public class WebSecurityConfig   extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/registration","/index")
+                .antMatchers("/login", "/registration","/index", "/asking/index")
                 .permitAll()
                 .antMatchers("/account/**").hasAnyAuthority("USER")
                 .and()
-                .formLogin().defaultSuccessUrl("/asking")
-                .loginPage("/login")
+                .formLogin().defaultSuccessUrl("/asking/index")
+                .loginPage("/login").successForwardUrl("/asking/index")
                 .failureUrl("/login-error")
-                .and()
-                .logout().logoutSuccessUrl("/login")
                 .permitAll();
-
     }
 
    /* @Override
