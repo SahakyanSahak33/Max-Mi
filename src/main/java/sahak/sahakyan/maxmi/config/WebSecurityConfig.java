@@ -27,14 +27,18 @@ public class WebSecurityConfig   extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .formLogin()
-                .loginPage("/login.html").successForwardUrl("/currentUser")
+        http.authorizeRequests()
+                .antMatchers("/login", "/registration","/index")
+                .permitAll()
+                .antMatchers("/account/**").hasAnyAuthority("USER")
+                .and()
+                .formLogin().defaultSuccessUrl("/asking")
+                .loginPage("/login")
                 .failureUrl("/login-error")
                 .and()
-                .logout()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/index");
+                .logout().logoutSuccessUrl("/login")
+                .permitAll();
+
     }
 
    /* @Override

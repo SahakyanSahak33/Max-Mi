@@ -97,24 +97,20 @@ public class MyController {
             ShopmeUserDetails userDetails = new ShopmeUserDetails(user);
             System.out.println(userDetails);
             model.addAttribute("userDetails", userDetails);
-            return "redirect:/currentUser";
+            return "redirect:/account/index";
         }
         return "redirect:/login-error";
     }
 
-    @RequestMapping("/currentUser")
+    @RequestMapping("/account/index")
     public String currentUser(@ModelAttribute("userDetails") ShopmeUserDetails userDetails, Model model) {
+        System.out.println(userDetails);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
             User user = userService.findByUsername(userDetails.getUsername());
-            // perform any necessary actions
             return "index";
         } else {
-            // user is not authenticated, redirect to login page
             return "redirect:/login";
         }
-//        System.out.println("-------------------------------| /currentUser | ------------------------------");
-//        User user = userService.findByUsername(userDetails.getUsername());
-//        return "index";
     }
 }
