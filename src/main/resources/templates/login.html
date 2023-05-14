@@ -2,16 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login page</title>
+    <link rel="stylesheet" th:href="@{../assets/css/login.css}">
 </head>
 <body>
-<h1>Login page</h1>
-<p th:if="${loginError}" class="error">Wrong user or password</p>
-<form th:action="@{/login.html}" method="post">
-    <label for="username">Username</label>:
-    <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
-    <label for="password">Password</label>:
-    <input type="password" id="password" name="password" /> <br />
-    <input type="submit" value="Log in" />
-</form>
+<main>
+    <h1>Login page</h1>
+    <p th:if="${loginError}" class="error">Wrong user or password</p>
+    <form th:action="@{/login.html}" method="post">
+        <div class="login__div">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" autofocus="autofocus"/> <br/>
+        </div>
+        <div class="password__div">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"/> <br/>
+        </div>
+        <input class="login_button" type="submit" value="Log in"/>
+    </form>
+</main>
 </body>
 </html>

@@ -22,129 +22,66 @@ body {
     justify-content: center;
     height: 100vh;
 }
-/* Login */
-.login_soc{
+main {
+    background: #ffffff;
+    border-radius: 30px;
+    border: 1px solid #ffffff;
     display: flex;
+    flex-direction: column;
+    width: 500px;
     align-items: center;
-    justify-content: center;
-    column-gap: 30px;
+    padding: 50px;
 }
-.login_logo{
-    display: flex;
-    justify-content: center;
-}
-.login_main hr{
-    color: #222222;
-    opacity: 0.4;
-}
-.login_main_2{
+form {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
-    margin-top: 25px;
+    row-gap: 10px;
 }
-.login_main{
-    display: flex;
-    width: 560px !important;
-    flex-direction: column;
-    row-gap: 73px;
-    height: max-content;
-    padding: 72px 31px 54px 30px;
-    border-radius: 10px;
-    background: #FFFFFF;
-}
-.login_div_main{
+.login__div , .password__div {
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 3px;
 }
-.login_div_2{
-    display: flex;
-    flex-direction: column;
-    row-gap: 40px;
-}
-.lg_input_2{
-    position: relative;
-}
-.lg_input_2_svg svg path{
-    fill: #8C8C8C;
-}
-.lg_input_2_svg{
-    position: absolute;
-    right: 27px;
-    top:29px;
-}
-.login_iputs{
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    width: 100%;
-}
-.login_iputs input{
-    padding: 28px 55px 28px 25px;
+form div input {
+    width: 300px;
+    padding: 10px 0 10px 10px;
     background: #F7F7F7;
     font-style: normal;
     font-weight: normal;
     outline: none;
     font-size: 15px;
     line-height: 18px;
-    /* text-transform: lowercase; */
     color: #9B9B9B;
     border: 1px solid #D3D3D3;
     box-sizing: border-box;
     border-radius: 10px;
-    width: 100%;
 }
-.login_span{
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 51px;
+label {
+    font-family: medium;
+    font-size: 16px;
+    color: #0C5AA6;
 }
-.lg_input_2_svg_active{
-    cursor: pointer;
-}
-.login_span span{
+h1 {
     cursor: pointer;
     font-family: medium;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 25px;
     width: 169px;
     border-bottom: 2px solid transparent;
     line-height: 24px;
     text-transform: capitalize;
     color: #222222;
     text-align: center;
-    padding-bottom: 15px;
+    margin-bottom: 10px;
 }
-.lg_span_active{
-    color: #0C5AA6 !important;
-    border-bottom: 2px solid #0C5AA6 !important;
-}
-.login_soc a{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
-.login_password_a{
-    font-family: medium;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 21px;
-    text-transform: capitalize;
-    color: #0C5AA6;
-
-}
-.login_button{
+.login_button {
     background: #0C5AA6;
     border-radius: 10px;
-    height: 71px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #0C5AA6;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -152,42 +89,17 @@ body {
     font-family: medium;
     font-style: normal;
     font-weight: 500;
+    cursor: pointer;
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
 }
-.login_show_all{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 25px;
-    display: flex;
-    justify-content: center;
-    text-transform: capitalize;
-    color: #0C5AA6;
-}
-.login_div_2{
+.error {
     font-family: medium;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    color: #747474;
+    font-size: 15px;
+    line-height: 24px;
+    width: 300px;
+    color: red;
 }
-.login_soc a:nth-child(1){
-    background: #E91F30;
-}
-.login_soc a:nth-child(2){
-    background: #000000;
-}
-.login_soc a:nth-child(3){
-    background: #3B5998;
-}
-.login_soc a:nth-child(4){
-    background: #55ACEE;
-}
-
-/* End Login */
