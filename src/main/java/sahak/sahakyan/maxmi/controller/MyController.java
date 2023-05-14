@@ -30,11 +30,14 @@ public class MyController {
         return "index";
     }
 
-    @GetMapping("/login")
-    public String login(Model model) {
-        UserDTO userDTO = new UserDTO();
-        model.addAttribute("userDTO", userDTO);
-        return "login";
+    @RequestMapping("/login.html")
+    public String login() {
+        return "login.html";
+    }
+
+    @RequestMapping("/account/success.html")
+    public String accountSuccess() {
+        return "success.html";
     }
 
     @RequestMapping("/registration")
