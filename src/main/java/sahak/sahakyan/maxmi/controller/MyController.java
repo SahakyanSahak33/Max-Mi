@@ -2,21 +2,26 @@ package sahak.sahakyan.maxmi.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import sahak.sahakyan.maxmi.dto.RegistrationErrors;
 import sahak.sahakyan.maxmi.dto.ShopmeUserDetails;
 import sahak.sahakyan.maxmi.dto.UserDTO;
+import sahak.sahakyan.maxmi.entity.Authority;
 import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.AuthorityService;
 import sahak.sahakyan.maxmi.service.UserService;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 @RequiredArgsConstructor
@@ -80,7 +85,7 @@ public class MyController {
     }
 
     @RequestMapping(value = "/asking")
-    public ModelAndView asking(@ModelAttribute("userLogIn") UserDTO userDTO, ModelAndView model) {
+    public String asking(@ModelAttribute("userLogIn") UserDTO userDTO, Model model) {
         System.out.println("----------------------| /asking |------------------------");
         System.out.println("UserDTO ------- " + userDTO);
         String name = userDTO.getUsername();
@@ -89,7 +94,7 @@ public class MyController {
         System.out.println(user);
         if (user == null) {
             System.out.println("user is Null !");
-            return model;
+            return "redirect:/login-error";
         }
         String password = userDTO.getPassword();
         System.out.println(user.getPassword());
@@ -99,13 +104,11 @@ public class MyController {
             System.out.println("Password was true");
             ShopmeUserDetails userDetails = new ShopmeUserDetails(user);
             System.out.println(userDetails);
-            model.setViewName("index.html");
-            model.addObject("userDetails", userDetails);
-            return model;
+            model.addAttribute("userDetails", userDetails);
+            return "redirect:/account/index";
         }
         System.out.println("LOGIN - ERROR");
-        model.setViewName("login.html");
-        return model;
+        return "redirect:/login-error";
     }
 
     @RequestMapping("/account/index")
