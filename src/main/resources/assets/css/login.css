@@ -103,3 +103,11 @@ h1 {
     width: 300px;
     color: red;
 }
+a {
+    font-family: medium;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #0C5AA6;
+}

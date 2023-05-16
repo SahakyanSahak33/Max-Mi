@@ -8,15 +8,17 @@
 <main>
     <h1>Login page</h1>
     <p th:if="${loginError}" class="error">Wrong user or password</p>
-    <form th:action="@{/login.html}" method="post">
+    <!--/*@thymesVar id="userDTO" type="sahak.sahakyan.maxmi.dto.UserDTO"*/-->
+    <form th:action="@{/authenticate}" th:object="${userDTO}" method="post">
         <div class="login__div">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" autofocus="autofocus"/> <br/>
+            <input type="text" id="username" name="username" th:field="*{username}" autofocus="autofocus"/> <br/>
         </div>
         <div class="password__div">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"/> <br/>
+            <input type="password" id="password" th:field="*{password}" name="password"/> <br/>
         </div>
+        <a href="#" onclick="window.location.href = 'registration'">Registration</a>
         <input class="login_button" type="submit" value="Log in"/>
     </form>
 </main>
