@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import sahak.sahakyan.maxmi.dto.DashboardDTO;
+import sahak.sahakyan.maxmi.dto.PasswordDTO;
 import sahak.sahakyan.maxmi.dto.RegistrationErrors;
 import sahak.sahakyan.maxmi.dto.UserDTO;
 import sahak.sahakyan.maxmi.entity.User;
@@ -70,6 +72,13 @@ public class MyController {
                 System.out.println("LOGIN - ERROR");
                 return "redirect:/login-error";
             }
+
+        @RequestMapping("/logout")
+        public String logout(Model model) {
+            UserDTO UserDTO = new UserDTO();
+            model.addAttribute("userDTO", UserDTO);
+            return "login";
+        }
     //**************************| END LOGIN ! |**************************/
 
     /**----------------------------| REGISTRATION |----------------------------*/
@@ -97,7 +106,7 @@ public class MyController {
                 return "registration";
             } else if (userService.checkUser(user)) {
                 user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
-                userService.save(user);
+                userService.saveUser(user);
                 return "redirect:/login";
             }
             RegistrationErrors.repeatedPassword = true;
@@ -108,15 +117,45 @@ public class MyController {
     /**----------------------------| USER-HOME |----------------------------*/
     @GetMapping("/user/userhome")
     @PreAuthorize("hasRole('USER')")
-    public String showDashboard(Model model, Authentication authentication) {
+    public String userHome(Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
         model.addAttribute("user", user);
         return "userhome";
     }
     //**************************| END USER-HOME ! |**************************/
 
-    @RequestMapping("/success.html")
-    public String accountSuccess() {
-        return "success";
+    /**----------------------------| Settings |----------------------------*/
+
+    @GetMapping("/user/settings")
+    @PreAuthorize("hasRole('USER')")
+    public String dashboard(Model model, Authentication authentication) {
+        User user = userService.findByUsername(authentication.getName());
+        DashboardDTO dashboardDTO = new DashboardDTO();
+        model.addAttribute("userName", user.getUsername());
+        model.addAttribute("dashboardDTO", dashboardDTO);
+        return "dashboard";
     }
+    @PostMapping("/user/settings")
+    public String saveDashboard(@ModelAttribute("userName") String username) {
+        User user = userService.findByUsername(username);
+        userService.save(user);
+        return "redirect:/user/userhome";
+    }
+    @GetMapping("/user/security")
+    @PreAuthorize("hasRole('USER')")
+    public String security(Model model, Authentication authentication) {
+        User user = userService.findByUsername(authentication.getName());
+        PasswordDTO passwordDTO = new PasswordDTO();
+        model.addAttribute("passwordDTO", passwordDTO);
+        model.addAttribute("userName", user.getUsername());
+        return "security";
+    }
+    @PostMapping("/user/security")
+    public String saveSecurity(@ModelAttribute("userName") String username) {
+        User user = userService.findByUsername(username);
+        userService.save(user);
+        return "redirect:/user/userhome";
+    }
+
+    //**************************| END Settings ! |**************************/
 }

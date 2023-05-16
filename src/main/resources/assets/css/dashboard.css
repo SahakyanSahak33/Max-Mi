@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #F4F4F4;
+}
+body > p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+}
+main {
+    display:flex;
+    width: 1400px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+}
+.account_menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    width: 260px;
+}
+.account_image {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+}
+.account_image > span {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #FFFFFF;
+    filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.1));
+    border-radius: 100px;
+}
+.account_image > p {
+    font-family: 'Roboto', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #212529;
+
+}
+.account_privacy {
+    display: flex;
+    flex-direction: column;
+}
+.account_image svg {
+    width: 40px;
+    height: 40px;
+}
+button {
+    outline: none;
+    border: 1px solid;
+    width: 249px;
+    height: 55px;
+    padding-left: 23px;
+    background: #007BFF;
+    border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 20px;
+    color: #fff;
+}

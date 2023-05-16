@@ -288,6 +288,10 @@ $('.header_signed_in').on('click',function(e){
     $('.hsin_posa').toggleClass('hsin_posa_active')
     e.stopPropagation();
  })
+function changeLink() {
+    var link = document.getElementById('logoutLink');
+    link.href = '/logout';
+}
 
  $(document).on('click',function(){
     $('.hsin_posa').removeClass('hsin_posa_active');

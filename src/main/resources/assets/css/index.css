@@ -87,6 +87,11 @@ header{
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+.hsin_posa_active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate(0px , 0px);
+}
 .hsin_posa hr{
     opacity: .3;
     color: rgba(40, 40, 40, 0.2);

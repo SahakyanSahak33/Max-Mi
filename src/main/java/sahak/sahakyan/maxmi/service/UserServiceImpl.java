@@ -37,7 +37,7 @@ public class UserServiceImpl implements  UserService{
 
     @Override
     @Transactional
-    public void save(User user) {
+    public void saveUser(User user) {
         System.out.println("saveUser Method");
         Date dt = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -52,6 +52,13 @@ public class UserServiceImpl implements  UserService{
     }
 
     @Override
+    @Transactional
+    public void save(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
+    @Transactional
     public User findById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
