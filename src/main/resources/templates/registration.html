@@ -14,7 +14,7 @@
         <img th:src="@{../assets/img/logoLogin.png}" alt="nkar">
     </a>
     <p th:if="${registrationError}">Your Email or PhoneNumber was registered </p>
-    <form action="#" th:action="@{/saveUser}" th:object="${user}" method="post">
+    <form action="#" th:action="@{/registration}" th:object="${user}" method="post">
         <div class="user-details">
             <div class="input-box">
                 <label for="username" class="details">Username</label>
