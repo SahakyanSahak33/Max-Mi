@@ -10,13 +10,12 @@
     <div class="account_menu">
         <div class="account_image">
             <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
-                                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
-                    </span>
+                <img th:src="@{../assets/img/account.png}" alt="Account">
+            </span>
             <p>Kiran Acharya</p>
         </div>
         <div class="account_privacy">
-            <button>
+            <button class="active_button">
                 <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.9017 7.15714V11.4429C12.9017 11.5976 12.8451 11.7315 12.732 11.8446C12.6189 11.9577 12.485 12.0143 12.3303 12.0143H8.90168V8.58571H6.61596V12.0143H3.18739C3.03263 12.0143 2.8987 11.9577 2.78561 11.8446C2.67251 11.7315 2.61596 11.5976 2.61596 11.4429V7.15714C2.61596 7.15119 2.61745 7.14226 2.62043 7.13035C2.62341 7.11845 2.62489 7.10952 2.62489 7.10357L7.75882 2.87142L12.8928 7.10357C12.8987 7.11547 12.9017 7.13333 12.9017 7.15714ZM14.8928 6.54107L14.3392 7.20178C14.2916 7.25535 14.2291 7.28809 14.1517 7.3H14.1249C14.0475 7.3 13.985 7.27916 13.9374 7.2375L7.75882 2.08571L1.58025 7.2375C1.50882 7.28512 1.43739 7.30595 1.36596 7.3C1.28858 7.28809 1.22608 7.25535 1.17846 7.20178L0.624893 6.54107C0.577274 6.48154 0.556441 6.4116 0.562393 6.33125C0.568346 6.25089 0.601084 6.1869 0.660608 6.13928L7.08025 0.791067C7.27073 0.636306 7.49692 0.558925 7.75882 0.558925C8.02073 0.558925 8.24692 0.636306 8.43739 0.791067L10.616 2.6125V0.871425C10.616 0.788091 10.6428 0.719639 10.6963 0.666067C10.7499 0.612496 10.8183 0.58571 10.9017 0.58571H12.616C12.6993 0.58571 12.7678 0.612496 12.8213 0.666067C12.8749 0.719639 12.9017 0.788091 12.9017 0.871425V4.51428L14.857 6.13928C14.9166 6.1869 14.9493 6.25089 14.9553 6.33125C14.9612 6.4116 14.9404 6.48154 14.8928 6.54107Z"
                           fill="white"/>
@@ -48,15 +47,15 @@
                 <input type="text" id="firstName" th:value="*{firstName}">
             </div>
             <div class="input-box">
-                <label for="lastName"></label>
+                <label for="lastName">Last Name</label>
                 <input type="text" id="lastName" th:value="*{lastName}">
             </div>
             <div class="input-box">
-                <label for="email">First Name</label>
+                <label for="email">Email</label>
                 <input type="text" id="email" th:value="*{email}">
             </div>
             <div class="input-box">
-                <label for="phoneNumber">First Name</label>
+                <label for="phoneNumber">Phone Number</label>
                 <input type="text" id="phoneNumber" th:value="*{phoneNumber}">
             </div>
             <div class="input-box">
