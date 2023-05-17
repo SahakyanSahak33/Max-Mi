@@ -138,15 +138,28 @@ public class MyController {
                 .phoneNumber(user.getPhoneNumber())
                 .build();
         model.addAttribute("dashboardDTO", dashboardDTO);
+        model.addAttribute("username", user.getUsername());
         return "dashboard";
     }
     @PostMapping("/user/settings")
-    public String saveDashboard(@ModelAttribute("dashboardDTO") DashboardDTO dashboardDTO) {
+    public String saveDashboard(@ModelAttribute("dashboardDTO") DashboardDTO dashboardDTO, @ModelAttribute("username") String username) {
         System.out.println("----------------------| /user/settings |---------------------------");
+        User oldUser = userService.findByUsername(username);
         System.out.println(dashboardDTO);
-        User user = userService.findByUsername(dashboardDTO.getUsername());
+        User user = new User();
+        user.setFirstName(dashboardDTO.getFirstName());
+        user.setLastName(dashboardDTO.getLastName());
+        user.setEmail(dashboardDTO.getEmail());
+        user.setPhoneNumber(dashboardDTO.getPhoneNumber());
+        user.setUsername(dashboardDTO.getUsername());
+        user.setDate(oldUser.getDate());
+        user.setId(oldUser.getId());
+        user.setAuthorities(oldUser.getAuthorities());
+        user.setGender(oldUser.getGender());
+        user.setEnabled(oldUser.isEnabled());
+        user.setPassword(oldUser.getPassword());
         System.out.println(user);
-//        userService.save(user);
+        userService.save(user);
         return "redirect:/user/userhome";
     }
     @GetMapping("/user/security")
@@ -159,10 +172,21 @@ public class MyController {
         return "security";
     }
     @PostMapping("/user/security")
-    public String saveSecurity(@ModelAttribute("userName") String username) {
+    public String saveSecurity(@ModelAttribute("userName") String username, @ModelAttribute("passwordDTO") PasswordDTO passwordDTO, Model model) {
         User user = userService.findByUsername(username);
-        userService.save(user);
-        return "redirect:/user/userhome";
+        if (passwordDTO.getOldPassword().equals(passwordDTO.getNewPassword())) {
+            String newPassword = BCrypt.hashpw(passwordDTO.getNewPassword(), BCrypt.gensalt());
+            String userPassword = user.getPassword();
+            if (userPassword.equals(newPassword)) {
+                user.setPassword(newPassword);
+                userService.save(user);
+                return "redirect:/user/userhome";
+            }
+            model.addAttribute("isNotCorrectNewPassword", true);
+            return "security";
+        }
+        model.addAttribute("isNotPasswordsEquals", true);
+        return "security";
     }
 
     //**************************| END Settings ! |**************************/

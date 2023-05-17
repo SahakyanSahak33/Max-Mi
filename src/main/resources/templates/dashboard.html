@@ -56,27 +56,26 @@
     </div>
     <div class="account_settings">
         <p>Account Settings</p>
-        <form action="#" th:object="${dashboardDTO}" th:action="@{/user/settings}" class="settings_config"
-              method="post">
+        <form action="#" th:object="${dashboardDTO}" th:action="@{/user/settings}" method="post">
             <div class="input-box">
                 <label for="firstName">First Name</label>
-                <input placeholder="firstName" type="text" id="firstName" th:value="*{firstName}">
+                <input placeholder="firstName" type="text" id="firstName" th:field="*{firstName}">
             </div>
             <div class="input-box">
                 <label for="lastName">Last Name</label>
-                <input placeholder="lastName" type="text" id="lastName" th:value="*{lastName}">
+                <input placeholder="lastName" type="text" id="lastName" th:field="*{lastName}">
             </div>
             <div class="input-box">
                 <label for="email">Email</label>
-                <input placeholder="email" type="text" id="email" th:value="*{email}">
+                <input placeholder="email" type="text" id="email" th:field="*{email}">
             </div>
             <div class="input-box">
                 <label for="phoneNumber">Phone Number</label>
-                <input placeholder="phoneNumber" type="text" id="phoneNumber" th:value="*{phoneNumber}">
+                <input placeholder="phoneNumber" type="text" id="phoneNumber" th:field="*{phoneNumber}">
             </div>
             <div class="input-box">
                 <label for="username">Username</label>
-                <input placeholder="username" type="text" id="username" th:value="*{username}">
+                <input placeholder="username" type="text" id="username" th:field="*{username}">
             </div>
             <input type="submit" value="Update" class="update_button">
         </form>

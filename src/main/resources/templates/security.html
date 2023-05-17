@@ -57,13 +57,15 @@
         <p>Account Settings</p>
         <form action="#" th:object="${passwordDTO}" th:action="@{/user/security}" class="settings_config"
               method="post">
+            <p th:if="${isNotPasswordsEquals}" class="error">Password is not equals</p>
+            <p th:if="${isNotCorrectNewPassword}" class="error">Old password is not right</p>
             <div class="input-box">
                 <label for="oldPassword">Old Password</label>
-                <input type="password" placeholder="oldPassword" id="oldPassword" th:value="*{oldPassword}">
+                <input type="password" placeholder="oldPassword" id="oldPassword" th:field="*{oldPassword}">
             </div>
             <div class="input-box">
                 <label for="newPassword">New Password</label>
-                <input type="password" placeholder="newPassword" id="newPassword" th:value="*{newPassword}">
+                <input type="password" placeholder="newPassword" id="newPassword" th:field="*{newPassword}">
             </div>
             <input type="submit" value="Update" class="update_button">
         </form>
