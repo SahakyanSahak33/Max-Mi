@@ -20,14 +20,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     height: 100vh;
-    row-gap: 10px;
     background-color: #F4F4F4;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 body > p {
     font-family: medium;
+
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
@@ -69,8 +70,8 @@ main {
 }
 
 .account_image > span {
-    height: 51px;
-    width: 51px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,20 +162,8 @@ form {
     width: 365px;
     background: #FFFFFF;
     border: 1px solid #CED4DA;
-    font-family: light;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
     border-radius: 4px;
     outline: none;
-}
-.input-box input::placeholder {
-    font-family: light;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
 }
 
 label {
@@ -185,7 +174,6 @@ label {
     line-height: 24px;
 }
 .update_button {
-    cursor: pointer;
     width: 76.78px;
     height: 38px;
     background: #007BFF;

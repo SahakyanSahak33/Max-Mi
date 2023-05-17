@@ -130,15 +130,23 @@ public class MyController {
     @PreAuthorize("hasRole('USER')")
     public String dashboard(Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
-        DashboardDTO dashboardDTO = new DashboardDTO();
-        model.addAttribute("userName", user.getUsername());
+        DashboardDTO dashboardDTO = DashboardDTO.builder()
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
+                .username(user.getUsername())
+                .email(user.getEmail())
+                .phoneNumber(user.getPhoneNumber())
+                .build();
         model.addAttribute("dashboardDTO", dashboardDTO);
         return "dashboard";
     }
     @PostMapping("/user/settings")
-    public String saveDashboard(@ModelAttribute("userName") String username) {
-        User user = userService.findByUsername(username);
-        userService.save(user);
+    public String saveDashboard(@ModelAttribute("dashboardDTO") DashboardDTO dashboardDTO) {
+        System.out.println("----------------------| /user/settings |---------------------------");
+        System.out.println(dashboardDTO);
+        User user = userService.findByUsername(dashboardDTO.getUsername());
+        System.out.println(user);
+//        userService.save(user);
         return "redirect:/user/userhome";
     }
     @GetMapping("/user/security")
