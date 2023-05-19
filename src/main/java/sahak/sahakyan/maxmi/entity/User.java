@@ -35,7 +35,7 @@ public class User {
     @Column(name = "last_name")
     String lastName;
     @NotBlank
-    @Pattern(regexp = "\\+\\d{3}-\\d{2}-\\d{3}-\\d{3}", message = "Please use pattern +XXX-XXX-XXX")
+    @Pattern(regexp = "\\+\\d{3}-\\d{2}-\\d{3}-\\d{3}", message = "Please use pattern +XXX-XX-XXX-XXX")
     @Column(name = "phone_number")
     String phoneNumber;
     @NotBlank

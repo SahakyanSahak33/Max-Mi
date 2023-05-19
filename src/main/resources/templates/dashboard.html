@@ -59,22 +59,32 @@
         <form action="#" th:object="${dashboardDTO}" th:action="@{/user/settings}" method="post">
             <div class="input-box">
                 <label for="firstName">First Name</label>
+                <p th:if="${#fields.hasErrors('firstName')}" th:errorclass="firstName" th:errors="*{firstName}"
+                   th:class="${#fields.hasErrors('firstName')}? error"></p>
                 <input placeholder="firstName" type="text" id="firstName" th:field="*{firstName}">
             </div>
             <div class="input-box">
                 <label for="lastName">Last Name</label>
+                <p th:if="${#fields.hasErrors('lastName')}" th:errorclass="lastName" th:errors="*{lastName}"
+                   th:class="${#fields.hasErrors('lastName')}? error"></p>
                 <input placeholder="lastName" type="text" id="lastName" th:field="*{lastName}">
             </div>
             <div class="input-box">
                 <label for="email">Email</label>
+                <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"
+                   th:class="${#fields.hasErrors('email')}? error"></p>
                 <input placeholder="email" type="text" id="email" th:field="*{email}">
             </div>
             <div class="input-box">
                 <label for="phoneNumber">Phone Number</label>
+                <p th:if="${#fields.hasErrors('phoneNumber')}" th:errorclass="phoneNumber"
+                   th:errors="*{phoneNumber}"
+                   th:class="${#fields.hasErrors('phoneNumber')}? error"></p>
                 <input placeholder="phoneNumber" type="text" id="phoneNumber" th:field="*{phoneNumber}">
             </div>
             <div class="input-box">
                 <label for="username">Username</label>
+                <p th:if="${#fields.hasErrors('username')}" th:errorclass="username" th:errors="*{username}"></p>
                 <input placeholder="username" type="text" id="username" th:field="*{username}">
             </div>
             <input type="submit" value="Update" class="update_button">

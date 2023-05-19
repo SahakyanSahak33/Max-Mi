@@ -17,6 +17,7 @@ import sahak.sahakyan.maxmi.dto.UserDTO;
 import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.AuthorityService;
 import sahak.sahakyan.maxmi.service.UserService;
+
 import javax.validation.Valid;
 import java.util.Arrays;
 
@@ -27,94 +28,102 @@ public class MyController {
     private final UserService userService;
     private final AuthorityService authorityService;
 
-    /**----------------------------| WELCOME |----------------------------*/
+    /**
+     * ----------------------------| WELCOME |----------------------------
+     */
     @GetMapping("/")
     public String home() {
         return "welcome";
     }
     //**************************| END WELCOME ! |**************************/
 
-    /**----------------------------| LOGIN |----------------------------*/
-        @RequestMapping("/login")
-        public String login(Model model) {
-            UserDTO userDTO = new UserDTO();
-            model.addAttribute("userDTO" , userDTO);
-            return "login";
-        }
+    /**
+     * ----------------------------| LOGIN |----------------------------
+     */
+    @RequestMapping("/login")
+    public String login(Model model) {
+        UserDTO userDTO = new UserDTO();
+        model.addAttribute("userDTO", userDTO);
+        return "login";
+    }
 
-        @RequestMapping("/login-error")
-        public String loginError(Model model) {
-            System.out.println("----------------------| /login-error.html |------------------------");
-            model.addAttribute("loginError", true);
-            UserDTO UserDTO = new UserDTO();
-            model.addAttribute("userDTO", UserDTO);
-            return "login.html";
-        }
+    @RequestMapping("/login-error")
+    public String loginError(Model model) {
+        System.out.println("----------------------| /login-error.html |------------------------");
+        model.addAttribute("loginError", true);
+        UserDTO UserDTO = new UserDTO();
+        model.addAttribute("userDTO", UserDTO);
+        return "login.html";
+    }
 
-            /*--------| LOGIN METHOD |--------*/
-            @PostMapping("/authenticate")
-            public String asking(@ModelAttribute("userDTO") UserDTO userDTO, Model model) {
-                System.out.println("----------------------| /asking |------------------------");
-                System.out.println("UserDTO ------- " + userDTO);
-                String name = userDTO.getUsername();
-                System.out.println("userDTO.getUsername() ------------- " + name);
-                User user = userService.findByUsername(name);
-                System.out.println(user);
-                if (user == null) {
-                    System.out.println("user is Null !");
-                    return "redirect:/login-error";
-                }
-                String password = userDTO.getPassword();
-                if (BCrypt.checkpw(password, user.getPassword())) {
-                    model.addAttribute("userName", user.getUsername());
-                    return "redirect:/user/userhome";
-                }
-                System.out.println("LOGIN - ERROR");
-                return "redirect:/login-error";
-            }
-
-        @RequestMapping("/logout")
-        public String logout(Model model) {
-            UserDTO UserDTO = new UserDTO();
-            model.addAttribute("userDTO", UserDTO);
-            return "login";
+    /*--------| LOGIN METHOD |--------*/
+    @PostMapping("/authenticate")
+    public String asking(@ModelAttribute("userDTO") UserDTO userDTO, Model model) {
+        System.out.println("----------------------| /asking |------------------------");
+        System.out.println("UserDTO ------- " + userDTO);
+        String name = userDTO.getUsername();
+        System.out.println("userDTO.getUsername() ------------- " + name);
+        User user = userService.findByUsername(name);
+        System.out.println(user);
+        if (user == null) {
+            System.out.println("user is Null !");
+            return "redirect:/login-error";
         }
+        String password = userDTO.getPassword();
+        if (BCrypt.checkpw(password, user.getPassword())) {
+            model.addAttribute("userName", user.getUsername());
+            return "redirect:/user/userhome";
+        }
+        System.out.println("LOGIN - ERROR");
+        return "redirect:/login-error";
+    }
+
+    @RequestMapping("/logout")
+    public String logout(Model model) {
+        UserDTO UserDTO = new UserDTO();
+        model.addAttribute("userDTO", UserDTO);
+        return "login";
+    }
     //**************************| END LOGIN ! |**************************/
 
-    /**----------------------------| REGISTRATION |----------------------------*/
-        @GetMapping("/registration")
-        public String registration(Model model) {
-            User user = new User();
-            model.addAttribute("user", user);
-            return "registration";
-        }
+    /**
+     * ----------------------------| REGISTRATION |----------------------------
+     */
+    @GetMapping("/registration")
+    public String registration(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "registration";
+    }
 
-        @RequestMapping("/registration-error")
-        public String registrationError(Model model) {
-            User user = new User();
-            model.addAttribute("user", user);
-            model.addAttribute("registrationError", RegistrationErrors.registrationError);
-            model.addAttribute("repeatedPassword", RegistrationErrors.repeatedPassword);
-            return "registration";
-        }
+    @RequestMapping("/registration-error")
+    public String registrationError(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        model.addAttribute("registrationError", RegistrationErrors.registrationError);
+        model.addAttribute("repeatedPassword", RegistrationErrors.repeatedPassword);
+        return "registration";
+    }
 
-            /*--------| REGISTRATION METHOD |--------*/
-        @PostMapping("/registration")
-        public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
-            System.out.println(user);
-            if (bindingResult.hasErrors()) {
-                return "registration";
-            } else if (userService.checkUser(user)) {
-                user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
-                userService.saveUser(user);
-                return "redirect:/login";
-            }
-            RegistrationErrors.repeatedPassword = true;
-            return "redirect:/registration-error";
+    /*--------| REGISTRATION METHOD |--------*/
+    @PostMapping("/registration")
+    public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        System.out.println(user);
+        if (bindingResult.hasErrors()) {
+            return "registration";
+        } else if (userService.checkUser(user)) {
+            user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
+            userService.saveUser(user);
+            return "redirect:/login";
         }
+        RegistrationErrors.repeatedPassword = true;
+        return "redirect:/registration-error";
+    }
     //**************************| END REGISTRATION ! |**************************/
 
-    /**----------------------------| USER-HOME |----------------------------*/
+    /**
+     * ----------------------------| USER-HOME |----------------------------
+     */
     @GetMapping("/user/userhome")
     @PreAuthorize("hasRole('USER')")
     public String userHome(Model model, Authentication authentication) {
@@ -124,12 +133,18 @@ public class MyController {
     }
     //**************************| END USER-HOME ! |**************************/
 
-    /**----------------------------| Settings |----------------------------*/
+    /**
+     * ----------------------------| Settings |----------------------------
+     */
 
     @GetMapping("/user/settings")
     @PreAuthorize("hasRole('USER')")
     public String dashboard(Model model, Authentication authentication) {
+        System.out.println("----------------------| @GetMapping /user/settings |---------------------------");
+//        NullPointer is throwing in the next line ! --->
+        System.out.println(authentication.getName());
         User user = userService.findByUsername(authentication.getName());
+        System.out.println(user);
         DashboardDTO dashboardDTO = DashboardDTO.builder()
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
@@ -138,14 +153,16 @@ public class MyController {
                 .phoneNumber(user.getPhoneNumber())
                 .build();
         model.addAttribute("dashboardDTO", dashboardDTO);
-        model.addAttribute("username", user.getUsername());
         return "dashboard";
     }
+
     @PostMapping("/user/settings")
-    public String saveDashboard(@ModelAttribute("dashboardDTO") DashboardDTO dashboardDTO, @ModelAttribute("username") String username) {
+    public String saveDashboard(@Valid @ModelAttribute("dashboardDTO") DashboardDTO dashboardDTO, Authentication authentication, BindingResult bindingResult) {
         System.out.println("----------------------| /user/settings |---------------------------");
-        User oldUser = userService.findByUsername(username);
+        if (bindingResult.hasErrors()) return "dashboard";
+        User oldUser = userService.findByUsername(authentication.getName());
         System.out.println(dashboardDTO);
+        System.out.println(oldUser);
         User user = new User();
         user.setFirstName(dashboardDTO.getFirstName());
         user.setLastName(dashboardDTO.getLastName());
@@ -162,32 +179,38 @@ public class MyController {
         userService.save(user);
         return "redirect:/user/userhome";
     }
+
     @GetMapping("/user/security")
     @PreAuthorize("hasRole('USER')")
     public String security(Model model, Authentication authentication) {
+        System.out.println("-------------------------| @GetMapping /user/security |----------------------");
         User user = userService.findByUsername(authentication.getName());
+        System.out.println(user);
         PasswordDTO passwordDTO = new PasswordDTO();
+        System.out.println("User Id -- " + user.getId());
+        model.addAttribute("id", user.getId());
         model.addAttribute("passwordDTO", passwordDTO);
-        model.addAttribute("userName", user.getUsername());
-        return "security";
-    }
-    @PostMapping("/user/security")
-    public String saveSecurity(@ModelAttribute("userName") String username, @ModelAttribute("passwordDTO") PasswordDTO passwordDTO, Model model) {
-        User user = userService.findByUsername(username);
-        if (passwordDTO.getOldPassword().equals(passwordDTO.getNewPassword())) {
-            String newPassword = BCrypt.hashpw(passwordDTO.getNewPassword(), BCrypt.gensalt());
-            String userPassword = user.getPassword();
-            if (userPassword.equals(newPassword)) {
-                user.setPassword(newPassword);
-                userService.save(user);
-                return "redirect:/user/userhome";
-            }
-            model.addAttribute("isNotCorrectNewPassword", true);
-            return "security";
-        }
-        model.addAttribute("isNotPasswordsEquals", true);
         return "security";
     }
 
+    @PostMapping("/user/security")
+    public String saveSecurity(Authentication authentication, @Valid @ModelAttribute("passwordDTO") PasswordDTO passwordDTO, Model model, BindingResult bindingResult) {
+        System.out.println("-------------------------| /user/security |----------------------");
+        System.out.println("passwordDTO old password ---- " + passwordDTO.getOldPassword());
+        System.out.println("passwordDTO new password ---- " + passwordDTO.getNewPassword());
+        User user = userService.findByUsername(authentication.getName());
+        if (BCrypt.checkpw(passwordDTO.getOldPassword(), user.getPassword())) {
+            System.out.println("First condition was true");
+            String newPassword = BCrypt.hashpw(passwordDTO.getNewPassword(), BCrypt.gensalt());
+            if (bindingResult.hasErrors()) {
+                return "security";
+            }
+            System.out.println("And Second condition was true");
+            user.setPassword(newPassword);
+       }
+        System.out.println("First condition wasn't true");
+        model.addAttribute("isNotPasswordsEquals", true);
+        return "security";
+    }
     //**************************| END Settings ! |**************************/
 }
