@@ -1,7 +1,10 @@
 package sahak.sahakyan.maxmi.controller;
 
+import com.sun.security.auth.UserPrincipal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -142,7 +145,6 @@ public class MyController {
     public String dashboard(Model model, Authentication authentication) {
         System.out.println("----------------------| @GetMapping /user/settings |---------------------------");
 //        NullPointer is throwing in the next line ! --->
-        System.out.println(authentication.getName());
         User user = userService.findByUsername(authentication.getName());
         System.out.println(user);
         DashboardDTO dashboardDTO = DashboardDTO.builder()
@@ -177,7 +179,7 @@ public class MyController {
         user.setPassword(oldUser.getPassword());
         System.out.println(user);
         userService.save(user);
-        return "redirect:/user/userhome";
+        return "redirect:/logout";
     }
 
     @GetMapping("/user/security")
