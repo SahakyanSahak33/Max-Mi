@@ -209,6 +209,8 @@ public class MyController {
             }
             System.out.println("And Second condition was true");
             user.setPassword(newPassword);
+            userService.save(user);
+            return "redirect:/logout";
        }
         System.out.println("First condition wasn't true");
         model.addAttribute("isNotPasswordsEquals", true);

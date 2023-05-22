@@ -40,7 +40,7 @@ CREATE TABLE products (
 CREATE TABLE orders (
                         order_id BIGINT PRIMARY KEY AUTO_INCREMENT,
                         user_id BIGINT,
-                        order_date DATE NOT NULL,
+                        order_date VARCHAR(255) NOT NULL,
                         product_id BIGINT,
                         address VARCHAR(250) NOT NULL,
                         city VARCHAR(250) NOT NULL,
@@ -57,6 +57,22 @@ CREATE TABLE liked_products (
                                 FOREIGN KEY (user_id) REFERENCES users(id),
                                 FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+CREATE TABLE cards (
+                       card_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                       user_id BIGINT,
+                       card_number VARCHAR(16),
+                       card_holder VARCHAR(100),
+                       expiration_date VARCHAR(255),
+                       FOREIGN KEY (user_id) REFERENCES users(id)
+);
 
+CREATE TABLE basket (
+                        basket_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                        user_id BIGINT,
+                        product_id BIGINT,
+                        quantity INT,
+                        FOREIGN KEY (user_id) REFERENCES users(id),
+                        FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
 INSERT INTO `my_db`.`authorities` (`name`) VALUES ('USER');
 INSERT INTO `my_db`.`authorities` (`name`) VALUES ('ADMIN');
