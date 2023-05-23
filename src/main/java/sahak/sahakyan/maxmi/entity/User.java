@@ -63,10 +63,4 @@ public class User {
             inverseJoinColumns = { @JoinColumn(name = "authority_id") }
     )
     private List<Authority> authorities;
-
-    @OneToMany(mappedBy = "user")
-    private List<Order> orders;
-
-    @OneToMany(mappedBy = "user")
-    private List<LikedProduct> likedProducts;
 }

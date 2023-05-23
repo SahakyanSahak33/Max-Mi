@@ -1,7 +1,14 @@
 package sahak.sahakyan.maxmi.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@Data
+@AllArgsConstructor
 @Entity
 @Table(name = "basket")
 public class Basket {
@@ -10,15 +17,16 @@ public class Basket {
     @Column(name = "basket_id")
     private Long basketId;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
-    private int quantity;
+    @Column(name = "quantity")
+    private Integer quantity;
 
-    // Constructors, getters, and setters
+    // Getters and setters
 }

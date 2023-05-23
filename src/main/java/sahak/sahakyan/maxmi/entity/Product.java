@@ -1,7 +1,14 @@
 package sahak.sahakyan.maxmi.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "products")
 public class Product {
@@ -13,12 +20,15 @@ public class Product {
     @Column(name = "product_name")
     private String productName;
 
-    private int price;
+    @Column(name = "price")
+    private Integer price;
 
+    @Column(name = "description")
     private String description;
 
     @Lob
+    @Column(name = "image")
     private byte[] image;
 
-    // Constructors, getters, and setters
+    // Getters and setters
 }

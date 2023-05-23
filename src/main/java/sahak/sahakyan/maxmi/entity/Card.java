@@ -1,7 +1,14 @@
 package sahak.sahakyan.maxmi.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "cards")
 public class Card {
@@ -22,6 +29,4 @@ public class Card {
 
     @Column(name = "expiration_date")
     private String expirationDate;
-
-    // Constructors, getters, and setters
 }

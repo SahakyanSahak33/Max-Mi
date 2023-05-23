@@ -1,7 +1,14 @@
 package sahak.sahakyan.maxmi.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -10,14 +17,10 @@ public class Order {
     @Column(name = "order_id")
     private Long orderId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
     @Column(name = "order_date")
     private String orderDate;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
@@ -30,5 +33,7 @@ public class Order {
     @Column(name = "country")
     private String country;
 
-    // Constructors, getters, and setters
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
