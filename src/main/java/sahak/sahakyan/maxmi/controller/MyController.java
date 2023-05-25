@@ -17,12 +17,19 @@ import sahak.sahakyan.maxmi.dto.DashboardDTO;
 import sahak.sahakyan.maxmi.dto.PasswordDTO;
 import sahak.sahakyan.maxmi.dto.RegistrationErrors;
 import sahak.sahakyan.maxmi.dto.UserDTO;
+import sahak.sahakyan.maxmi.entity.Product;
 import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.AuthorityService;
+import sahak.sahakyan.maxmi.service.ProductService;
 import sahak.sahakyan.maxmi.service.UserService;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -30,6 +37,7 @@ public class MyController {
 
     private final UserService userService;
     private final AuthorityService authorityService;
+    private final ProductService productService;
 
     /**
      * ----------------------------| WELCOME |----------------------------
@@ -131,7 +139,10 @@ public class MyController {
     @PreAuthorize("hasRole('USER')")
     public String userHome(Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
+        productService.saveProduct(saveProduct());
+        List<Product> arrayList = productService.findAll();
         model.addAttribute("user", user);
+        model.addAttribute("products", arrayList);
         return "userhome";
     }
     //**************************| END USER-HOME ! |**************************/
@@ -211,10 +222,30 @@ public class MyController {
             user.setPassword(newPassword);
             userService.save(user);
             return "redirect:/logout";
-       }
+        }
         System.out.println("First condition wasn't true");
         model.addAttribute("isNotPasswordsEquals", true);
         return "security";
     }
     //**************************| END Settings ! |**************************/
+
+    private Product saveProduct() {
+        Product product = new Product();
+        product.setPrice(1200);
+        product.setProductName("Iphone14 Pro");
+        product.setDiscount(40);
+        product.setDescription("Description of Iphone 14 Pro");
+        String imagePath = "C:/Users/SAHAK/Documents/GitHub/MaxMi/src/main/resources/assets/img/Iphone22.png";
+        File imageFile = new File(imagePath);
+        byte[] imageData = new byte[(int) imageFile.length()];
+
+        try (FileInputStream fis = new FileInputStream(imageFile)) {
+            System.out.println(fis.read(imageData));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        product.setImage(imageData);
+        System.out.println(product);
+        return product;
+    }
 }

@@ -3,6 +3,7 @@ package sahak.sahakyan.maxmi.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "products")
+@ToString
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +25,13 @@ public class Product {
     @Column(name = "price")
     private Integer price;
 
+    @Column(name = "discount")
+    private Integer discount;
+
     @Column(name = "description")
     private String description;
 
     @Lob
     @Column(name = "image")
     private byte[] image;
-
-    // Getters and setters
 }

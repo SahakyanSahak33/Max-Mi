@@ -6,6 +6,7 @@ CREATE TABLE products
     product_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(100),
     price        INT,
+    discount       INT,
     description  TEXT,
     image        BLOB
 );
@@ -82,3 +83,6 @@ INSERT INTO `my_db`.`authorities` (`name`)
 VALUES ('USER');
 INSERT INTO `my_db`.`authorities` (`name`)
 VALUES ('ADMIN');
+
+INSERT INTO products (product_name, price, discount, description, image)
+VALUES ('Iphone 14 Pro', 1199, 10, 'Description of Product 1', LOAD_FILE('C:/Users/SAHAK/Documents/GitHub/MaxMi/src/main/resources/assets/img/Iphone22.png'));
