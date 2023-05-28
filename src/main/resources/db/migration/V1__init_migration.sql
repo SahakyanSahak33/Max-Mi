@@ -84,5 +84,5 @@ VALUES ('USER');
 INSERT INTO `my_db`.`authorities` (`name`)
 VALUES ('ADMIN');
 
-INSERT INTO products (product_name, price, discount, description, image)
-VALUES ('Iphone 14 Pro', 1199, 10, 'Description of Product 1', LOAD_FILE('C:/Users/SAHAK/Documents/GitHub/MaxMi/src/main/resources/assets/img/Iphone22.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro', LOAD_FILE('c:/my_folder/Iphone22.png'));

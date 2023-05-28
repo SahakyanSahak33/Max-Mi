@@ -2444,7 +2444,7 @@
                 <div class="zxm_1">
                     <a href="#" class="zxm_zexch">
                         <img th:src="@{../assets/img/zexch.svg}" alt="zexh">
-                        <span th:text="${product.getDiscount()}"></span>
+                        <span th:text="${product.getDiscount() + '%'}"></span>
                     </a>
                     <div class="zxm_right_menu">
                         <a href="#">
@@ -2542,8 +2542,8 @@
                         </a>
                     </div>
                     <a href="#" class="zxm_1_img">
-                        <img th:src="@{'data:image/png;base64,' + #strings.toString(${product.getImage()})}" alt="Product Image">
-
+<!--                        #strings.toString(product.getImage())-->
+                        <img th:src="@{|data:image/png;base64,${product.base64Image}|}" alt="Product Image">
                     </a>
                     <div class="zxm_text">
                         <a href="#" class="zxm_text_a" th:text="${product.getProductName()}"></a>

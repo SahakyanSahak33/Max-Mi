@@ -1,13 +1,8 @@
 package sahak.sahakyan.maxmi.controller;
 
-import com.sun.security.auth.UserPrincipal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +22,7 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 
 @Controller
@@ -139,8 +133,13 @@ public class MyController {
     @PreAuthorize("hasRole('USER')")
     public String userHome(Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
-        productService.saveProduct(saveProduct());
+//        productService.saveProduct(saveProduct());
         List<Product> arrayList = productService.findAll();
+        for (Product product : arrayList) {
+            byte[] imageData = product.getImage();
+            String base64Image = Base64.getEncoder().encodeToString(imageData);
+            product.setBase64Image(base64Image);
+        }
         model.addAttribute("user", user);
         model.addAttribute("products", arrayList);
         return "userhome";
@@ -229,6 +228,12 @@ public class MyController {
     }
     //**************************| END Settings ! |**************************/
 
+    /**
+     * ----------------------------| Image |----------------------------
+     */
+
+    //**************************| END Image ! |**************************/
+
     private Product saveProduct() {
         Product product = new Product();
         product.setPrice(1200);
@@ -245,7 +250,6 @@ public class MyController {
             throw new RuntimeException(e);
         }
         product.setImage(imageData);
-        System.out.println(product);
         return product;
     }
 }

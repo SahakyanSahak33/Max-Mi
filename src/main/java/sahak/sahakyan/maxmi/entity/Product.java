@@ -34,4 +34,12 @@ public class Product {
     @Lob
     @Column(name = "image")
     private byte[] image;
+
+    @Transient
+    private String base64Image;
+
+    public String getFormattedProductId() {
+        return productId.toString();
+    }
+
 }
