@@ -172,6 +172,25 @@ header{
     box-sizing: border-box;
     border-radius: 300px;
 }
+.pageButton {
+    width: 90px;
+    height: 30px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: 1px solid #0C5AA6;
+    background: #ffffff;
+    color: #0C5AA6;
+    transition: .3s ease;
+}
+.pageButton:hover {
+    background: #0C5AA6;
+    color: #ffffff;
+}
 .h2sm_btn{
     position: absolute;
     right: 6px;
@@ -186,6 +205,10 @@ header{
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+}
+.zx_main_buttons {
+    display: flex;
+    column-gap: 30px;
 }
 .header_2_search_main .navbar{
     margin-right: 22px;
@@ -815,6 +838,7 @@ header{
     font-size: 25px;
     line-height: 30px;
     color: #282828;
+    margin-bottom: 25px;
 }
 .zx_main{
     position: relative;
@@ -833,7 +857,7 @@ header{
 .zx_main_main{
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 0px;
 }
 .zx_bottom:hover{
     color: #039BE5;

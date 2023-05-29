@@ -17,11 +17,9 @@ import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.AuthorityService;
 import sahak.sahakyan.maxmi.service.ProductService;
 import sahak.sahakyan.maxmi.service.UserService;
-
 import javax.validation.Valid;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -131,17 +129,24 @@ public class MyController {
      */
     @GetMapping("/user/userhome")
     @PreAuthorize("hasRole('USER')")
-    public String userHome(Model model, Authentication authentication) {
+    public String userHome(@RequestParam(defaultValue = "1") int pageNumber , Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
-//        productService.saveProduct(saveProduct());
         List<Product> arrayList = productService.findAll();
-        for (Product product : arrayList) {
+
+        int pageSize = 12;
+        int startIndex = (pageNumber - 1) * pageSize;
+        int endIndex = Math.min(startIndex + pageSize, arrayList.size());
+
+        List<Product> pageList = arrayList.subList(startIndex, endIndex);
+        for (Product product : pageList) {
             byte[] imageData = product.getImage();
             String base64Image = Base64.getEncoder().encodeToString(imageData);
             product.setBase64Image(base64Image);
         }
+        model.addAttribute("pageList", pageList);
+        model.addAttribute("pageNumber", pageNumber);
+        model.addAttribute("totalPages", Math.ceil((double) arrayList.size() / pageSize));
         model.addAttribute("user", user);
-        model.addAttribute("products", arrayList);
         return "userhome";
     }
     //**************************| END USER-HOME ! |**************************/
@@ -229,27 +234,14 @@ public class MyController {
     //**************************| END Settings ! |**************************/
 
     /**
-     * ----------------------------| Image |----------------------------
+     * ----------------------------| Basket |----------------------------
      */
+    @GetMapping("/user/userhome/saveIntoBasket")
+    public String saveIntoBasket() {
 
-    //**************************| END Image ! |**************************/
 
-    private Product saveProduct() {
-        Product product = new Product();
-        product.setPrice(1200);
-        product.setProductName("Iphone14 Pro");
-        product.setDiscount(40);
-        product.setDescription("Description of Iphone 14 Pro");
-        String imagePath = "C:/Users/SAHAK/Documents/GitHub/MaxMi/src/main/resources/assets/img/Iphone22.png";
-        File imageFile = new File(imagePath);
-        byte[] imageData = new byte[(int) imageFile.length()];
 
-        try (FileInputStream fis = new FileInputStream(imageFile)) {
-            System.out.println(fis.read(imageData));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        product.setImage(imageData);
-        return product;
+        return "redirect:/user/userhome";
     }
+    //**************************| END Basket ! |**************************/
 }

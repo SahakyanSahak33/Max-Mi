@@ -6,7 +6,7 @@ CREATE TABLE products
     product_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(100),
     price        INT,
-    discount       INT,
+    discount     INT,
     description  TEXT,
     image        BLOB
 );
@@ -52,14 +52,14 @@ CREATE TABLE user_authority
 CREATE TABLE orders
 (
     order_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
-    user_id BIGINT,
+    user_id    BIGINT,
     order_date VARCHAR(255) NOT NULL,
     product_id BIGINT,
     address    VARCHAR(250) NOT NULL,
     city       VARCHAR(250) NOT NULL,
     country    VARCHAR(250) NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products (product_id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
 CREATE TABLE liked_products
@@ -79,10 +79,153 @@ CREATE TABLE basket
     FOREIGN KEY (user_id) REFERENCES users (id),
     FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
+
 INSERT INTO `my_db`.`authorities` (`name`)
 VALUES ('USER');
 INSERT INTO `my_db`.`authorities` (`name`)
 VALUES ('ADMIN');
 
 INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro', LOAD_FILE('c:/my_folder/Iphone22.png'));
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
+INSERT INTO products (price, product_name, discount, description, image)
+VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+        LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));
