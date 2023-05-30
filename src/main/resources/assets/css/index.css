@@ -19,6 +19,24 @@
 button{
     cursor: pointer;
 }
+::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00B73E;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00B73E;
+}
 html{
     scroll-behavior: smooth;
     display: flex;
@@ -1525,4 +1543,40 @@ footer{
 .underline_div{
     border-bottom: 1px solid white;
     padding-bottom: 9px;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #0C5AA6;
+    border-top-color: #00B73E;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
 }

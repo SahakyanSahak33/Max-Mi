@@ -293,29 +293,15 @@ function changeLink() {
     link.href = '/logout';
 }
 
- $(document).on('click',function(){
+$(document).on('click',function(){
     $('.hsin_posa').removeClass('hsin_posa_active');
+})
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
 
- })
-let register = document.querySelector('.lg_span_reg').addEventListener("click",regist);
-let login = document.querySelector('.lg_span_log').addEventListener("click",logIn);
-let registerXX = document.querySelector('.lg_span_reg');
-let registerXXDiv = document.querySelector('.login_register_main');
-let loginXX = document.querySelector('.lg_span_log');
-let loginXXDiv = document.querySelector('.login_main_2');
-function regist(){
-    loginXX.classList.remove('lg_span_active');
-    registerXX.classList.add('lg_span_active');
-    registerXXDiv.classList.remove('login_register_main_no_active');
-    registerXXDiv.classList.add('login_register_main_active');
-    loginXXDiv.classList.add('login_main_2_no_active');
-    loginXXDiv.classList.remove('login_main_2_active');
-}
-function logIn(){
-    loginXX.classList.add('lg_span_active');
-    registerXX.classList.remove('lg_span_active');
-    registerXXDiv.classList.remove('login_register_main_active');
-    registerXXDiv.classList.add('login_register_main_no_active');
-    loginXXDiv.classList.remove('login_main_2_no_active');
-    loginXXDiv.classList.add('login_main_2_active');
-}
+    loader.classList.add("loader--hidden");
+
+    loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+    });
+});
