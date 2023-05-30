@@ -1,16 +1,17 @@
 package sahak.sahakyan.maxmi.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
-@Data
 @AllArgsConstructor
 @Entity
 @Table(name = "basket")
+@Getter
+@Setter
 public class Basket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,12 +22,17 @@ public class Basket {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(
+            name = "basket_products" ,
+            joinColumns = @JoinColumn(name = "basket_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> products;
 
-    @Column(name = "quantity")
-    private Integer quantity;
-
-    // Getters and setters
+    public void addProduct(Product product) {
+        if (products == null) {
+            products = new ArrayList<>();
+        }
+        products.add(product);
+    }
 }

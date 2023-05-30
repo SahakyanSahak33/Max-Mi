@@ -1,18 +1,17 @@
 package sahak.sahakyan.maxmi.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "products")
-@ToString
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +30,13 @@ public class Product {
     @Column(name = "description")
     private String description;
 
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(
+            name = "basket_products" ,
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "basket_id"))
+    private List<Basket> baskets;
+
     @Lob
     @Column(name = "image")
     private byte[] image;
@@ -38,8 +44,13 @@ public class Product {
     @Transient
     private String base64Image;
 
-    public String getFormattedProductId() {
-        return productId.toString();
+    public void addBasket(Basket basket) {
+        System.out.println("{--------------------| addBasket |---------------------}");
+        System.out.println(baskets);
+        if (baskets==null) {
+            baskets = new ArrayList<>();
+        }
+        System.out.println(basket);
+        baskets.add(basket);
     }
-
 }

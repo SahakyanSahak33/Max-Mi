@@ -2594,7 +2594,8 @@
                             <span class="zxm_pr_span">Սկսած 2500 դր․ / 12 ամիս</span>
                         </div>
                         <div class="zxm_buttons">
-                            <a href="#" class="zxm_button_1">
+                            <!--/*@thymesVar id="getProductId" type="java.lang.Long"*/-->
+                            <a href="#" class="zxm_button_1" th:href="@{/user/userhome/basket(productId=${product.getProductId().intValue()})}">
                                 <div class="zxmb1_svg">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12"
                                          fill="none">
@@ -2602,7 +2603,7 @@
                                               fill="white"/>
                                     </svg>
                                 </div>
-                                <a th:href="@{/user/userhome/saveIntoBasket}">Ավելացնել</a>
+                                <span>Ավելացնել</span>
                             </a>
                             <a href="#" class="zxm_button_2">
                                 <span>Գնել հիմա</span>

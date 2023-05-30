@@ -12,14 +12,14 @@ import sahak.sahakyan.maxmi.dto.DashboardDTO;
 import sahak.sahakyan.maxmi.dto.PasswordDTO;
 import sahak.sahakyan.maxmi.dto.RegistrationErrors;
 import sahak.sahakyan.maxmi.dto.UserDTO;
+import sahak.sahakyan.maxmi.entity.Basket;
 import sahak.sahakyan.maxmi.entity.Product;
 import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.AuthorityService;
+import sahak.sahakyan.maxmi.service.BasketService;
 import sahak.sahakyan.maxmi.service.ProductService;
 import sahak.sahakyan.maxmi.service.UserService;
 import javax.validation.Valid;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -30,6 +30,8 @@ public class MyController {
     private final UserService userService;
     private final AuthorityService authorityService;
     private final ProductService productService;
+    private final BasketService basketService;
+
 
     /**
      * ----------------------------| WELCOME |----------------------------
@@ -116,7 +118,12 @@ public class MyController {
             return "registration";
         } else if (userService.checkUser(user)) {
             user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
+            Basket basket = new Basket();
+            basketService.saveBasket(basket);
+            user.setBasket(basket);
             userService.saveUser(user);
+            basket.setUser(user);
+            basketService.saveBasket(basket);
             return "redirect:/login";
         }
         RegistrationErrors.repeatedPassword = true;
@@ -129,9 +136,11 @@ public class MyController {
      */
     @GetMapping("/user/userhome")
     @PreAuthorize("hasRole('USER')")
-    public String userHome(@RequestParam(defaultValue = "1") int pageNumber , Model model, Authentication authentication) {
+    public String userHome(@RequestParam(defaultValue = "1") int pageNumber ,@RequestParam(defaultValue = "0") int productId, Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
         List<Product> arrayList = productService.findAll();
+
+
 
         int pageSize = 12;
         int startIndex = (pageNumber - 1) * pageSize;
@@ -150,6 +159,23 @@ public class MyController {
         return "userhome";
     }
     //**************************| END USER-HOME ! |**************************/
+
+    /**
+     * ----------------------------| Basket |----------------------------
+     */
+    @GetMapping("/user/userhome/basket")
+    public String saveIntoBasket(@RequestParam(defaultValue = "0") int productId , Authentication authentication) {
+        User user = userService.findByUsername(authentication.getName());
+        System.out.println("----------------------------| Post Basket |----------------------------");
+        System.out.println("Product Id = " + productId);
+        Basket basket = user.getBasket();
+        Product product = productService.findByProductId((long) productId);
+        basket.addProduct(product);
+        basketService.saveBasket(basket);
+        product.addBasket(basket);
+        return "redirect:/user/userhome";
+    }
+    //**************************| END Basket ! |**************************/
 
     /**
      * ----------------------------| Settings |----------------------------
@@ -232,16 +258,4 @@ public class MyController {
         return "security";
     }
     //**************************| END Settings ! |**************************/
-
-    /**
-     * ----------------------------| Basket |----------------------------
-     */
-    @GetMapping("/user/userhome/saveIntoBasket")
-    public String saveIntoBasket() {
-
-
-
-        return "redirect:/user/userhome";
-    }
-    //**************************| END Basket ! |**************************/
 }
