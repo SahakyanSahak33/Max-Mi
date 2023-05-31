@@ -20,8 +20,9 @@ import sahak.sahakyan.maxmi.service.BasketService;
 import sahak.sahakyan.maxmi.service.ProductService;
 import sahak.sahakyan.maxmi.service.UserService;
 import javax.validation.Valid;
-import java.util.Base64;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Controller
 @RequiredArgsConstructor
@@ -139,13 +140,20 @@ public class MyController {
     public String userHome(@RequestParam(defaultValue = "1") int pageNumber ,@RequestParam(defaultValue = "0") int productId, Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
         List<Product> arrayList = productService.findAll();
-
-
-
+        List<Long> longList = basketService.findByUserId(user.getId()).getProducts().stream().map((Product::getProductId)).collect(Collectors.toList());
+        Map<Long, Product> productMap = new HashMap<>();
+        for (Product product:
+             arrayList) {
+            productMap.put(product.getProductId(), product);
+        }
+        for (Long id : longList) {
+            System.out.println(id);
+            productMap.remove(id);
+        }
+        arrayList = new ArrayList<Product>(productMap.values());
         int pageSize = 12;
         int startIndex = (pageNumber - 1) * pageSize;
         int endIndex = Math.min(startIndex + pageSize, arrayList.size());
-
         List<Product> pageList = arrayList.subList(startIndex, endIndex);
         for (Product product : pageList) {
             byte[] imageData = product.getImage();
@@ -153,6 +161,7 @@ public class MyController {
             product.setBase64Image(base64Image);
         }
         model.addAttribute("pageList", pageList);
+        model.addAttribute("longList", longList);
         model.addAttribute("pageNumber", pageNumber);
         model.addAttribute("totalPages", Math.ceil((double) arrayList.size() / pageSize));
         model.addAttribute("user", user);
