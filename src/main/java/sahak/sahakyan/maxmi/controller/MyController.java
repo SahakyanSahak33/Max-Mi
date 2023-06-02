@@ -8,21 +8,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import sahak.sahakyan.maxmi.dto.DashboardDTO;
-import sahak.sahakyan.maxmi.dto.PasswordDTO;
-import sahak.sahakyan.maxmi.dto.RegistrationErrors;
-import sahak.sahakyan.maxmi.dto.UserDTO;
+import sahak.sahakyan.maxmi.dto.*;
 import sahak.sahakyan.maxmi.entity.Basket;
+import sahak.sahakyan.maxmi.entity.Card;
 import sahak.sahakyan.maxmi.entity.Product;
 import sahak.sahakyan.maxmi.entity.User;
-import sahak.sahakyan.maxmi.service.AuthorityService;
-import sahak.sahakyan.maxmi.service.BasketService;
-import sahak.sahakyan.maxmi.service.ProductService;
-import sahak.sahakyan.maxmi.service.UserService;
+import sahak.sahakyan.maxmi.service.*;
+
 import javax.validation.Valid;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Controller
 @RequiredArgsConstructor
@@ -32,6 +27,7 @@ public class MyController {
     private final AuthorityService authorityService;
     private final ProductService productService;
     private final BasketService basketService;
+    private final CardService cardService;
 
 
     /**
@@ -267,4 +263,20 @@ public class MyController {
         return "security";
     }
     //**************************| END Settings ! |**************************/
+
+    @GetMapping("/user/card")
+    public String card(Model model, Authentication authentication) {
+        User user = userService.findByUsername(authentication.getName());
+        CardDTO card = new CardDTO();
+        model.addAttribute("userFirstName", user.getFirstName());
+        model.addAttribute("userLastName", user.getLastName());
+        model.addAttribute("cardDTO", card);
+        return "card";
+    }
+    @PostMapping("/user/card")
+    public String saveCard(@ModelAttribute("cardDTO") CardDTO cardDTO) {
+        Card card = new Card();
+        cardService.saveCard(card);
+        return "redirect:/user/userhome";
+    }
 }

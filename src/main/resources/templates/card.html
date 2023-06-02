@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script data-require="jquery@3.1.1" data-semver="3.1.1"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{../assets/css/cart.css}">
+    <script src="https://use.fontawesome.com/484df5253e.js"></script>
+    <script src="https://kit.fontawesome.com/8a9be494f1.js" crossorigin="anonymous"></script>
+    <title>Cart</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <form action="#" th:action="@{/user/card}" th:object="${cardDTO}" class="card-inner">
+                <div class="front">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="row">
+                        <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px">
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px">
+                    </div>
+                    <div class="row card-no">
+                        <div class="input-box">
+                            <label for="value1">____</label>
+                            <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "4" id="value1" th:field="*{value1}">
+                        </div>
+                        <div class="input-box">
+                            <label for="value2">____</label>
+                            <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "4" id="value2" th:field="*{value2}">
+                        </div>
+                        <div class="input-box">
+                            <label for="value3">____</label>
+                            <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "4" id="value3" th:field="*{value3}">
+                        </div>
+                        <div class="input-box">
+                            <label for="value4">____</label>
+                            <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "4" id="value4" th:field="*{value4}">
+                        </div>
+                    </div>
+                    <div class="row card-holder">
+                        <p>CARD HOLDER</p>
+                        <p>VALID TILL</p>
+                    </div>
+                    <div class="row name">
+                        <div class="row_name">
+                            <p th:text="${userFirstName}"></p>
+                            <p th:text="${userLastName}"></p>
+                        </div>
+                        <div class="input-box-valid">
+                            <div class="input-box">
+                                <label for="expirationDate">_</label>
+                                <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "1" id="expirationDate" th:field="*{expirationDate1}">
+                            </div>
+                            <p>/</p>
+                            <div class="input-box">
+                                <label for="expirationDate2">_</label>
+                                <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "1" id="expirationDate2" th:field="*{expirationDate2}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="bar"></div>
+                    <div class="row card-cvv">
+                        <div>
+                            <img src="https://i.ibb.co/S6JG8px/pattern.png">
+                        </div>
+                        <label>
+                            <input type="number" th:field="*{cardHolder}">
+                        </label>
+                    </div>
+                    <div class="row card-text">
+                        <p>this is a virtual card design using HTML and CSS. You can aslo design something like this.</p>
+                    </div>
+                    <div class="row signature">
+                        <p>CUSTOMER SIGNATURE</p>
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px">
+                    </div>
+                </div>
+                <input type="submit" value="OK">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
