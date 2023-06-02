@@ -6,12 +6,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CardDTO {
-    private int value1;
-    private int value2;
-    private int value3;
-    private int value4;
-    private int expirationDate1;
-    private int expirationDate2;
-    private int cardHolder;
-
+    private Integer value1;
+    private Integer value2;
+    private Integer value3;
+    private Integer value4;
+    private Integer expirationDate1;
+    private Integer expirationDate2;
+    private Integer cardHolder;
 }

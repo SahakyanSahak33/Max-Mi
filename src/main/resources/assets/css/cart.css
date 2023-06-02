@@ -6,14 +6,14 @@
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
 }
-
-.container {
-    min-height: 100vh;
-    width: 100%;
-    background: #000;
+body {
     display: flex;
+    height: 100vh;
     align-items: center;
     justify-content: center;
+    background: #fff;
+}
+.container {
 }
 
 .card {
@@ -25,16 +25,18 @@
 }
 
 .card-inner {
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    /* height: 410px; */
     position: relative;
     transition: transform 1s;
+    position: relative;
     transform-style: preserve-3d;
 }
 
 .front, .back {
     width: 100%;
     height: 100%;
+    color: #fff;
     background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
     position: absolute;
     top: 0;
@@ -57,6 +59,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    border-top-left-radius: 50px;
     opacity: 0.3;
     z-index: -1;
 }
@@ -114,14 +117,12 @@
 .signature {
     margin-top: 30px;
 }
-
 .back {
     transform: rotateY(180deg);
 }
-
-/* .card:hover .card-inner {
+.card:hover .card-inner {
     transform: rotateY(-180deg);
-} */
+}
 .row_name {
     display: flex;
     align-items: center;
@@ -163,4 +164,39 @@ input[type="number"] {
     font-size: 21px;
     top: 0px;
     z-index: -1;
+}
+.input-box-valid {
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+}
+.input-box-valid .input-box {
+    width: 45px !important;
+}
+.input-box-valid input {
+    width: 45px !important;
+}
+.form__div {
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 500px;
+}
+main {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form > input {
+    border: 1px solid #3a41bb;
+    outline: none;
+    background: #3a41bb;
+    color: #fff;
+    width: 120px;
+    margin-left: 37%;
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 40px;
 }
