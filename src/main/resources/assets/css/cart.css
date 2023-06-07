@@ -13,30 +13,9 @@ body {
     justify-content: center;
     background: #fff;
 }
-.container {
-}
-
-.card {
-    width: 500px;
-    height: 300px;
-    color: #fff;
-    cursor: pointer;
-    perspective: 1000px;
-}
-
-.card-inner {
-    width: 500px;
-    /* height: 410px; */
-    position: relative;
-    transition: transform 1s;
-    position: relative;
-    transform-style: preserve-3d;
-}
-
 .front, .back {
     width: 100%;
     height: 100%;
-    color: #fff;
     background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
     position: absolute;
     top: 0;
@@ -89,19 +68,27 @@ body {
 }
 
 .card-cvv {
+    position: relative;
     margin-top: 20px;
+    height: 40px;
+    width: 100%;
+    justify-content: flex-end;
 }
-
-.card-cvv div {
+.card-cvv-img {
     flex: 1;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
 }
 
 .card-cvv img {
     width: 100%;
     display: block;
+    height: 100%;
+    object-fit: cover;
     line-height: 0;
 }
-
 .card-cvv p {
     background: #fff;
     color: #000;
@@ -115,10 +102,14 @@ body {
 }
 
 .signature {
-    margin-top: 30px;
+    margin-top: 62px;
 }
 .back {
     transform: rotateY(180deg);
+}
+.rotate__active {
+    visibility: visible;
+    z-index: 3;
 }
 .card:hover .card-inner {
     transform: rotateY(-180deg);
@@ -137,10 +128,10 @@ body {
 .input-box > input {
     background: transparent;
     border: none;
-    color: #ffff;
+    color: #FFFFFF;
     outline: none;
     width: 100%;
-     overflow: hidden;
+    overflow: hidden;
     letter-spacing: 11px;
     font-size: 20px;
 }
@@ -168,7 +159,7 @@ input[type="number"] {
 .input-box-valid {
     display: flex;
     align-items: center;
-    column-gap: 2px;
+    column-gap: 7px;
 }
 .input-box-valid .input-box {
     width: 45px !important;
@@ -178,7 +169,7 @@ input[type="number"] {
 }
 .form__div {
     display: flex;
-    position: relative;
+    color: #FFFFFF;
     height: 300px;
     width: 500px;
 }
@@ -188,15 +179,61 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    column-gap: 30px;
 }
-form > input {
+.input__ok {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 120px;
+}
+form >.input__ok > input {
     border: 1px solid #3a41bb;
     outline: none;
     background: #3a41bb;
     color: #fff;
+    cursor: pointer;
     width: 120px;
-    margin-left: 37%;
-    margin-top: 20px;
+    backface-visibility: hidden;
     border-radius: 20px;
     height: 40px;
+}
+.rotate {
+    height: 30px;
+    width: 30px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.rotate > svg {
+    width: 100%;
+    height: 100%;
+}
+.rotate > svg > path {
+    fill: #3a41bb;
+}
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+.card-inner {
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.rotate__active.card-inner {
+    transform: rotateY(-180deg);
+}
+.card-cvv .input-box {
+    z-index: 2 !important;
+    color: #2B2E3C !important;
+    width: 70px !important;
+}
+.card-cvv .input-box input{
+    color: #2B2E3C !important;
 }

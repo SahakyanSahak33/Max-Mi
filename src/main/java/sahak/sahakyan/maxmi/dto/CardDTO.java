@@ -5,6 +5,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class CardDTO {
     private Integer value1;
     private Integer value2;

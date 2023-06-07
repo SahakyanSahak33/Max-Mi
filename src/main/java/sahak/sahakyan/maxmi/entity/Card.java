@@ -25,7 +25,7 @@ public class Card {
     private String cardNumber;
 
     @Column(name = "card_holder")
-    private String cardHolder;
+    private String signature;
 
     @Column(name = "expiration_date")
     private String expirationDate;

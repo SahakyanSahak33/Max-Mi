@@ -268,14 +268,21 @@ public class MyController {
     public String card(Model model, Authentication authentication) {
         User user = userService.findByUsername(authentication.getName());
         CardDTO card = new CardDTO();
+        if (!(cardService.findCardByUser(user)==null)) {
+            Card userCard = cardService.findCardByUser(user);
+            System.out.println(userCard);
+            card = cardService.createCardDTO(userCard);
+        }
+        System.out.println(card);
         model.addAttribute("userFirstName", user.getFirstName());
         model.addAttribute("userLastName", user.getLastName());
         model.addAttribute("cardDTO", card);
         return "card";
     }
     @PostMapping("/user/card")
-    public String saveCard(@ModelAttribute("cardDTO") CardDTO cardDTO) {
-        Card card = new Card();
+    public String saveCard(@ModelAttribute("cardDTO") CardDTO cardDTO,Authentication authentication) {
+        System.out.println("Card Save");
+        Card card = cardService.createCard(cardDTO, userService.findByUsername(authentication.getName()));
         cardService.saveCard(card);
         return "redirect:/user/userhome";
     }
