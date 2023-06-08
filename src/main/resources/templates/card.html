@@ -8,11 +8,13 @@
     <script data-require="jquery@3.1.1" data-semver="3.1.1"
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" th:href="@{../assets/css/cart.css}">
+    <link rel="stylesheet" th:href="@{../assets/css/loader.css}">
     <script src="https://use.fontawesome.com/484df5253e.js"></script>
     <script src="https://kit.fontawesome.com/8a9be494f1.js" crossorigin="anonymous"></script>
     <title>Cart</title>
 </head>
 <body>
+    <div id="loader" class="loader"></div>
     <main class="container">
         <form action="#" th:action="@{/user/card}" th:object="${cardDTO}" method="post">
             <div class="form__div card card-inner">
@@ -89,5 +91,6 @@
         </button>
     </main>
     <script th:src="@{../assets/js/card.js}"></script>
+    <script th:src="@{../assets/js/script.js}"></script>
 </body>
 </html>

@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{../assets/css/registration.css}">
+    <link rel="stylesheet" th:href="@{../assets/css/loader.css}">
     <title>Document</title>
 </head>
 <body>
-
+<div id="loader" class="loader"></div>
 <div class="login_main">
     <a href="#" class="login_logo">
         <img th:src="@{../assets/img/logoLogin.png}" alt="nkar">
@@ -89,6 +90,6 @@
         </div>
     </form>
 </div>
-
+<script th:src="@{../assets/js/script.js}"></script>
 </body>
 </html>

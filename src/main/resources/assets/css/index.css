@@ -1545,39 +1545,3 @@ footer{
     border-bottom: 1px solid white;
     padding-bottom: 9px;
 }
-.loader {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    transition: opacity 0.75s, visibility 0.75s;
-}
-.loader--hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader::after {
-    content: "";
-    width: 75px;
-    height: 75px;
-    border: 15px solid #0C5AA6;
-    border-top-color: #00B73E;
-    border-radius: 50%;
-    animation: loading 0.75s ease infinite;
-}
-
-@keyframes loading {
-    from {
-        transform: rotate(0turn);
-    }
-    to {
-        transform: rotate(1turn);
-    }
-}

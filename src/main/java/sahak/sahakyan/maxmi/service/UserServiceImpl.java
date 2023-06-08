@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import sahak.sahakyan.maxmi.dao.AuthorityRepository;
 import sahak.sahakyan.maxmi.dao.UserRepository;
+import sahak.sahakyan.maxmi.dto.DashboardDTO;
+import sahak.sahakyan.maxmi.dto.UserDTO;
 import sahak.sahakyan.maxmi.entity.Authority;
 import sahak.sahakyan.maxmi.entity.User;
 
@@ -67,6 +69,23 @@ public class UserServiceImpl implements  UserService{
     @Transactional
     public boolean checkUser(User user) {
         return !(userRepository.existsByEmail(user.getEmail()) || userRepository.existsByPhoneNumber(user.getPhoneNumber()));
+    }
+
+    @Override
+    public User changeUserFromUserDTO(DashboardDTO dashboardDTO, User oldUser) {
+        User user = new User();
+        user.setFirstName(dashboardDTO.getFirstName());
+        user.setLastName(dashboardDTO.getLastName());
+        user.setEmail(dashboardDTO.getEmail());
+        user.setPhoneNumber(dashboardDTO.getPhoneNumber());
+        user.setUsername(dashboardDTO.getUsername());
+        user.setDate(oldUser.getDate());
+        user.setId(oldUser.getId());
+        user.setAuthorities(oldUser.getAuthorities());
+        user.setGender(oldUser.getGender());
+        user.setEnabled(oldUser.isEnabled());
+        user.setPassword(oldUser.getPassword());
+        return user;
     }
 
     @Override

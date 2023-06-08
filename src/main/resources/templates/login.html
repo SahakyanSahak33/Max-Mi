@@ -3,9 +3,12 @@
 <head>
     <title>Login page</title>
     <link rel="stylesheet" th:href="@{../assets/css/login.css}">
+    <link rel="stylesheet" th:href="@{../assets/css/loader.css}">
 </head>
 <body>
 <main>
+    <div id="loader" class="loader"></div>
+
     <h1>Login page</h1>
     <p th:if="${loginError}" class="error">Wrong user or password</p>
     <!--/*@thymesVar id="userDTO" type="sahak.sahakyan.maxmi.dto.UserDTO"*/-->
@@ -22,5 +25,6 @@
         <input class="login_button" type="submit" value="Log in"/>
     </form>
 </main>
+<script th:src="@{../assets/js/script.js}"></script>
 </body>
 </html>

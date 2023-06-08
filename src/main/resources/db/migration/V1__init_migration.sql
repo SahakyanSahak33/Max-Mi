@@ -50,9 +50,9 @@ CREATE TABLE users (
 CREATE TABLE cards (
                        card_id         BIGINT AUTO_INCREMENT PRIMARY KEY,
                        user_id         BIGINT       NULL,
-                       card_number     VARCHAR(16)  NULL,
-                       card_holder     VARCHAR(100) NULL,
-                       expiration_date VARCHAR(255) NULL,
+                       card_number     VARCHAR(19)  NULL,
+                       card_holder     VARCHAR(3) NULL,
+                       expiration_date VARCHAR(5) NULL,
                        FOREIGN KEY (user_id) REFERENCES users (id)
 );
 

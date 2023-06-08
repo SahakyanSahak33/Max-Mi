@@ -33,6 +33,9 @@ public class CardServiceImpl implements CardService{
     @Override
     public Card createCard(CardDTO cardDTO, User user) {
         Card card = new Card();
+        if ( !(cardRepository.findCardByUser(user)==null)){
+            card = cardRepository.findCardByUser(user);
+        }
         String cardNumber = cardDTO.getValue1()+"-"+cardDTO.getValue2()+"-"+cardDTO.getValue3()+"-"+cardDTO.getValue4();
         card.setCardNumber(cardNumber);
         String cardExpirationDate = cardDTO.getExpirationDate1() + "-" + cardDTO.getExpirationDate2();

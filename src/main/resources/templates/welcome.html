@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{../assets/css/welocome.css}">
+    <link rel="stylesheet" th:href="@{../assets/css/loader.css}">
     <title>Title</title>
 </head>
 <body>
+
+<div id="loader" class="loader"></div>
+
+
     <main>
         <p>Welcome To Our Store</p>
         <section>
@@ -17,5 +22,6 @@
             <img th:src="@{../assets/img/background.jpg}" alt="nkar">
         </span>
     </main>
+<script th:src="@{../assets/js/script.js}"></script>
 </body>
 </html>
