@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p {
+    font-family: 'Cabin', sans-serif;
+}
+body {
+    background: #EDEDED;
+    display: flex;
+    justify-content: center;
+    padding: 56px 0;
+}
+main {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 56px;
+}
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section {
+    display: flex;
+    justify-content: space-between;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    width: 877px;
+}
+.product_block {
+    width: 100%;
+    padding: 16px 24px;
+    background: #FFFFFF;
+    height: 290px;
+    border-radius: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.product_text {
+    display: flex;
+    width: 610px;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.product_price_and_amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.product_image {
+    width: 190px;
+    height: 130px;
+}
+.product_image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product_text > :nth-child(1) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 38px;
+    color: #1A1F16;
+}
+.product_text > :nth-child(2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: 'Cabin', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #1A1F16;
+}
+.product_price_and_amount > p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1A1F16;
+}
+
+.amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+    width: 90px;
+    opacity: .9;
+    border-radius: 50px;
+}
+.amount > button {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.amount > input {
+    width: 35px;
+    height: 38px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    font-weight: 600;
+    font-size: 16px;
+    color: #282828;
+    text-align: center;
+}
+.items__main__item__menu__tab__text__count__minus path {
+    fill: #E5252C;
+}
+.items__main__item__menu__tab__text__count__plus path {
+    fill: #0C5AA6;
+}
+.summary {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    width: 243px;
+    height: 319px;
+    padding: 16px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    position: sticky;
+    top: 70px;
+}
+.summary > p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+.summary_text,
+.summary_total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.summary_text > p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    color: #60695C;
+}
+.summary_total > p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #E5252C;
+}
+.summary > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 211px;
+    height: 35px;
+    background: #1A1F16;
+    border-radius: 11px;
+    border: 1px solid #1A1F16;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    transition: .3s ease;
+}
+.summary > button:hover {
+    color: #1A1F16;
+    background: transparent;
+
+}
+.h2im_3 {
+    width: 35px;
+    height: 35px;
+}
+.h2im_3 > svg {
+    width: 100%;
+    height: 100%;
+}
+.text_p {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.text_p > p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 59px;
+    color: #0C5AA6;
+}

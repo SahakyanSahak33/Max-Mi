@@ -9,6 +9,7 @@ CREATE TABLE products (
                           product_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
                           product_name VARCHAR(100),
                           price        INT,
+                          rating       INT,
                           discount     INT,
                           description  TEXT,
                           image        BLOB
@@ -101,147 +102,147 @@ VALUES ('USER');
 INSERT INTO `my_db`.`authorities` (`name`)
 VALUES ('ADMIN');
 
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Iphone22.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/Note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tvsmall.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/airpod.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/braksmartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/hoco.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/urish_note2.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smarthfon.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/smartwatch.png'));
-INSERT INTO products (price, product_name, discount, description, image)
-VALUES (1200, 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Note',
+INSERT INTO products (price, rating , product_name, discount, description, image)
+VALUES (1200, 5 , 'Asus VivoBook 14 k413jq 16 GB ram / 512 GB SSD', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',
         LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/my_folder/tv.png'));

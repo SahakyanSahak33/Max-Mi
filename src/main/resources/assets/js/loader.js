@@ -1,3 +1,4 @@
+const loader = document.getElementById("loader");
 window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
 
@@ -6,4 +7,5 @@ window.addEventListener("load", () => {
     loader.addEventListener("transitionend", () => {
         document.body.removeChild(loader);
     });
+    loader.style.display = "none";
 });

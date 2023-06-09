@@ -173,3 +173,51 @@ function changeLink() {
 $(document).on('click',function(){
     $('.hsin_posa').removeClass('hsin_posa_active');
 })
+$(document).ready(function(){
+    $('.slider_3').slick({
+        dots: true,
+        arrows:true,
+        slidesToShow:1,
+        slidesToScroll:1,
+        speed:1000,
+        easing:'_linear_',          //defualt
+        infinite: true,
+        nextArrow: '.slider_3_arrows_2',
+        prevArrow: '.slider_3_arrows_1',           //defualt
+        autoplay:true,
+        autoplaySpeed: 5000,
+        pauseOnFocus:true,          //defualt
+        pauseOnHover:true,          //defualt
+        pauseOnDotsHover:true,      //defualt
+        draggable: true,           //for pc 'Erb vor mknikov porcum enq sharjel'
+        swipe:true,                //for touch screen
+        touchThresHold:5,           //defualt 'kapvaca swipe-i het'
+        touchMove:false,            //sxmac chenq karox sharjel
+        waitForAnimate:true,        //no defualt
+        centerMode: false,          //defualt
+        variableWidth: false,       //defualt
+        rows:1,                     //Defualt 'Sharqer irar tak'
+        slidesPerRow: 1,            //defualt 'Sharqer irar koxq'
+        // Vertical verev nerqev
+        vertical:false,              //defualt
+        verticalSwiping:false,
+        // responsive: [
+        //     {
+        //         breakpoint: 768,
+        //         settings: {
+        //             slidesToShow: 3,
+        //         }
+        //     },
+        //     {
+        //         breakpoint: 468,
+        //         settings: {
+        //             slidesToShow: 2,
+        //         }
+        //     }
+        // ],
+        mobileFirst: false,         //defualt min-width isk false --- max-widts=h
+        appendArrows: $('.slider_3_arrows'), //html-i mej sarqum es div et classi anunov  kam urish anunov u iran pahum dra mej
+        // appendDots: $('.appendArrows'),   //html-i mej sarqum es div et classi anunov  kam urish anunov u iran pahum dra mej
+    });
+});
+// $('.star_number')

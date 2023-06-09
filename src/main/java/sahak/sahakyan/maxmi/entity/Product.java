@@ -27,6 +27,9 @@ public class Product {
     @Column(name = "discount")
     private Integer discount;
 
+    @Column(name = "rating")
+    private int rating;
+
     @Column(name = "description")
     private String description;
 
@@ -36,6 +39,7 @@ public class Product {
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "basket_id"))
     private List<Basket> baskets;
+
 
     @Lob
     @Column(name = "image")
