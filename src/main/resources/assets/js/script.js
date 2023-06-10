@@ -139,37 +139,6 @@ $(document).ready(function(){
         // appendDots: $('.appendArrows'),   //html-i mej sarqum es div et classi anunov  kam urish anunov u iran pahum dra mej
     });    
 });
-// let ddsa = document.querySelector('.header_signed_in').addEventListener("click",signedIn);
-// let header_signed_in_duble = document.querySelector('.header_signed_in').addEventListener("dblclick",cloosingsignedIn);
-let kxz = document.querySelector('.hsin_posa');
-function signedIn(e){
-    kxz.classList.remove("hsin_posa_no_active");
-    setTimeout(() => {
-        kxz.classList.add("hsin_posa_active");
-    },1);
-    // e.stopImmediatePropagation();
-    // this.removeEventListener("click", signedIn);
-    // document.onclick = cloosingsignedIn;
-};
-function cloosingsignedIn(x){
-    kxz.classList.remove("hsin_posa_active");
-    setTimeout(() => {
-        kxz.classList.add("hsin_posa_no_active");
-    },1);
-    // x.stopImmediatePropagation();
-    // this.removeEventListener("click", cloosingsignedIn);
-
-};
-
-$('.header_signed_in').on('click',function(e){
-    $('.hsin_posa').toggleClass('hsin_posa_active')
-    e.stopPropagation();
- })
-function changeLink() {
-    var link = document.getElementById('logoutLink');
-    link.href = '/logout';
-}
-
 $(document).on('click',function(){
     $('.hsin_posa').removeClass('hsin_posa_active');
 })
@@ -220,4 +189,29 @@ $(document).ready(function(){
         // appendDots: $('.appendArrows'),   //html-i mej sarqum es div et classi anunov  kam urish anunov u iran pahum dra mej
     });
 });
-// $('.star_number')
+// let ddsa = document.querySelector('.header_signed_in').addEventListener("click",signedIn);
+// let header_signed_in_duble = document.querySelector('.header_signed_in').addEventListener("dblclick",cloosingsignedIn);
+let kxz = document.querySelector('.hsin_posa');
+function signedIn(e){
+    kxz.classList.remove("hsin_posa_no_active");
+    setTimeout(() => {
+        kxz.classList.add("hsin_posa_active");
+    },1);
+    // e.stopImmediatePropagation();
+    // this.removeEventListener("click", signedIn);
+    // document.onclick = cloosingsignedIn;
+};
+function cloosingsignedIn(x){
+    kxz.classList.remove("hsin_posa_active");
+    setTimeout(() => {
+        kxz.classList.add("hsin_posa_no_active");
+    },1);
+    // x.stopImmediatePropagation();
+    // this.removeEventListener("click", cloosingsignedIn);
+
+};
+
+$('.header_signed_in').on('click',function(e){
+    $('.hsin_posa').toggleClass('hsin_posa_active')
+    e.stopPropagation();
+ })
