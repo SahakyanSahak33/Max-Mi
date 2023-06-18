@@ -35,7 +35,6 @@ public class UserHomeController {
             productMap.put(product.getProductId(), product);
         }
         for (Long id : longList) {
-            System.out.println(id);
             productMap.remove(id);
         }
         arrayList = new ArrayList<Product>(productMap.values());
@@ -53,6 +52,8 @@ public class UserHomeController {
         model.addAttribute("pageNumber", pageNumber);
         model.addAttribute("totalPages", Math.ceil((double) arrayList.size() / pageSize));
         model.addAttribute("user", user);
+        System.out.println("TotalPages - "  + Math.ceil((double) arrayList.size() / pageSize));
+        System.out.println("pageNumber - "  + pageNumber);
         return "userhome";
     }
     //**************************| END USER-HOME ! |**************************/

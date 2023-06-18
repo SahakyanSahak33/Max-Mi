@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,10 +21,6 @@ public class Order {
     @Column(name = "order_date")
     private String orderDate;
 
-    @OneToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
-
     @Column(name = "address")
     private String address;
 
@@ -33,7 +30,7 @@ public class Order {
     @Column(name = "country")
     private String country;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
 }

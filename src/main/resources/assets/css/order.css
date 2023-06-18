@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p, label, input, a{
+    font-family: 'Cabin', sans-serif;
+}
+body {
+    background: #EDEDED;
+    padding-top: 145px;
+}
+.header_2_a {
+    margin-top: 5px;
+}
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    column-gap: 30px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    width: 676px;
+    height: 142px;
+    background: #FFFFFF;
+    border-radius: 13px;
+    row-gap: 32px;
+}
+.card > p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31.25px;
+    line-height: 38px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #1A1F16;
+
+}
+.card > div {
+    display: flex;
+    align-items: center;
+    column-gap: 17px;
+}
+.card > div > p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(26, 31, 22, 0.5);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    row-gap: 16px;
+    width: 676px;
+    height: 499px;
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+.input-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+form label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    color: rgba(26, 31, 22, 0.5);
+}
+.input-box > input {
+    padding: 8px 16px;
+    width: 596px;
+    height: 56px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(26, 31, 22, 0.15);
+    border-radius: 13px;
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(26, 31, 22, 0.5);
+}
+button {
+    margin-top: 13px;
+    padding: 8px 24px;
+    width: 580px;
+    height: 40px;
+    background: #0C5AA6;
+    border: 1px solid #0C5AA6;
+    border-radius: 10px;
+    outline: none;
+    font-family: 'Cabin', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 24px;
+    color: #FFFFFF;
+    transition: .3s ease;
+}
+button:hover {
+    color: #0C5AA6;
+    background: transparent;
+}
+form > a {
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+    text-decoration-line: underline;
+    color: rgba(26, 31, 22, 0.5);
+}

@@ -24,6 +24,7 @@ import java.util.*;
 public class UserServiceImpl implements  UserService{
     private final UserRepository userRepository;
     private final AuthorityRepository authorityRepository;
+    private final DateService dateService;
 
     @Override
     @Transactional
@@ -41,10 +42,7 @@ public class UserServiceImpl implements  UserService{
     @Transactional
     public void saveUser(User user) {
         System.out.println("saveUser Method");
-        Date dt = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String currentTime = sdf.format(dt);
-        user.setDate(currentTime);
+        user.setDate(dateService.askDate());
         user.setEnabled(true);
         List<Authority> list = new ArrayList<>();
         Authority authority = authorityRepository.findById(1L).orElse(null);

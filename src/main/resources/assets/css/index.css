@@ -228,6 +228,7 @@ header{
 .zx_main_buttons {
     display: flex;
     column-gap: 30px;
+    z-index: 1;
 }
 .header_2_search_main .navbar{
     margin-right: 22px;
@@ -1166,7 +1167,7 @@ header{
 }
 .slider_3_main{
     margin-bottom: 59px;
-    margin-top: 27px;
+    margin-top: 37px;
     position: relative;
 }
 .slider_3 .slick-list{

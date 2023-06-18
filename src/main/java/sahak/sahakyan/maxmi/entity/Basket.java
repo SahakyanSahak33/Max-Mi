@@ -22,7 +22,7 @@ public class Basket {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "basket_products" ,
             joinColumns = @JoinColumn(name = "basket_id"),

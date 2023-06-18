@@ -52,14 +52,14 @@ public class CardServiceImpl implements CardService{
         String modified = card.getCardNumber().replaceAll("-", "");
         String[] parts = modified.split("(?<=\\G.{4})");
         System.out.println(Arrays.toString(parts));
-        cardDTO.setValue1(Integer.valueOf(parts[0]));
-        cardDTO.setValue2(Integer.valueOf(parts[1]));
-        cardDTO.setValue3(Integer.valueOf(parts[2]));
-        cardDTO.setValue4(Integer.valueOf(parts[3]));
-        cardDTO.setCardHolder(Integer.parseInt(card.getSignature()));
+        cardDTO.setValue1(parts[0]);
+        cardDTO.setValue2(parts[1]);
+        cardDTO.setValue3(parts[2]);
+        cardDTO.setValue4(parts[3]);
+        cardDTO.setCardHolder(card.getSignature());
         parts = card.getExpirationDate().split("-");
-        cardDTO.setExpirationDate1(Integer.parseInt(parts[0]));
-        cardDTO.setExpirationDate2(Integer.parseInt(parts[1]));
+        cardDTO.setExpirationDate1(parts[0]);
+        cardDTO.setExpirationDate2(parts[1]);
         return cardDTO;
     }
 }

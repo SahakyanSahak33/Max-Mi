@@ -7,11 +7,11 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class CardDTO {
-    private Integer value1;
-    private Integer value2;
-    private Integer value3;
-    private Integer value4;
-    private Integer expirationDate1;
-    private Integer expirationDate2;
-    private Integer cardHolder;
+    private String value1;
+    private String value2;
+    private String value3;
+    private String value4;
+    private String expirationDate1;
+    private String expirationDate2;
+    private String cardHolder;
 }
