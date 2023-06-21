@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{../assets/css/verification.css}">
+    <link rel="stylesheet" th:href="@{../assets/css/loader.css}">
+    <title>Title</title>
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+    <form action="#" th:action="@{/verificationCheck}" th:object="${verificationDTO}" method="get">
+        <div class="input-box">
+            <label for="value1">______</label>
+            <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "6" id="value1" th:field="*{number}">
+        </div>
+        <input class="login_button" type="submit" value="Verify"/>
+    </form>
+    <script th:src="@{../assets/js/loader.js}"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=josefin+Sans:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #EDEDED;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    background: #fff;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    height: 200px;
+    width: 310px;
+}
+.input-box {
+    display:flex;
+    width: 133px;
+    /* height: 200px; */
+    position: relative;
+    flex-direction:column-reverse;
+    z-index: 9;
+}
+.input-box > input {
+    background: transparent;
+    border: none;
+    color: #0C5AA6;
+    outline: none;
+    width: 100%;
+    overflow: hidden;
+    letter-spacing: 11px;
+    font-size: 20px;
+}
+::placeholder {
+    color:#fff;
+    font-size: 20px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+.input-box > label {
+    color: #EDEDED;
+    position: absolute;
+    letter-spacing: 10px;
+    height: 10px;
+    font-size: 21px;
+    top: 0px;
+    z-index: -1;
+}
+.login_button {
+    background: #0C5AA6;
+    border-radius: 10px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #0C5AA6;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 24px;
+    transition: .3s;
+    color: #FFFFFF;
+}
+.login_button:hover {
+    background: transparent;
+    color: #0C5AA6;
+}

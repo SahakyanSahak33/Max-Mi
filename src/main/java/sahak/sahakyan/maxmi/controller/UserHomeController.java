@@ -19,6 +19,7 @@ public class UserHomeController {
     private final UserService userService;
     private final ProductService productService;
     private final BasketService basketService;
+    private final EmailService emailService;
 
     /**
      * ----------------------------| USER-HOME |----------------------------
@@ -54,6 +55,7 @@ public class UserHomeController {
         model.addAttribute("user", user);
         System.out.println("TotalPages - "  + Math.ceil((double) arrayList.size() / pageSize));
         System.out.println("pageNumber - "  + pageNumber);
+        emailService.sendEmail(user.getEmail(),"Message", "6958");
         return "userhome";
     }
     //**************************| END USER-HOME ! |**************************/
