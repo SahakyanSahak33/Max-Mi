@@ -8,11 +8,14 @@
 </head>
 <body>
     <div id="loader" class="loader"></div>
-    <form action="#" th:action="@{/verificationCheck}" th:object="${verificationDTO}" method="get">
+    <p th:if="${isNotCorrect}">Verification Code was not Correct, Please try again</p>
+    <form action="#" th:action="@{/verificationCheck}" th:object="${verificationDTO}" method="post">
         <div class="input-box">
             <label for="value1">______</label>
             <input type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "6" id="value1" th:field="*{number}">
         </div>
+        <input type="hidden" th:field="*{userId}" id="userId">
+        <input type="hidden" th:field="*{code}" id="code">
         <input class="login_button" type="submit" value="Verify"/>
     </form>
     <script th:src="@{../assets/js/loader.js}"></script>

@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sahak.sahakyan.maxmi.dto.RegistrationErrors;
+import sahak.sahakyan.maxmi.dto.VerificationDTO;
 import sahak.sahakyan.maxmi.entity.Basket;
 import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.BasketService;
+import sahak.sahakyan.maxmi.service.EmailService;
 import sahak.sahakyan.maxmi.service.UserService;
+import sahak.sahakyan.maxmi.service.VerificationService;
 
 import javax.validation.Valid;
 
@@ -22,7 +25,9 @@ import javax.validation.Valid;
 public class RegistrationController {
 
     private final UserService userService;
+    private final EmailService emailService;
     private final BasketService basketService;
+
 
     /**
      * ----------------------------| REGISTRATION |----------------------------
@@ -45,7 +50,7 @@ public class RegistrationController {
 
     /*--------| REGISTRATION METHOD |--------*/
     @PostMapping("/registration")
-    public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+    public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, Model model) {
         System.out.println(user);
         if (bindingResult.hasErrors()) {
             return "registration";
@@ -54,10 +59,15 @@ public class RegistrationController {
             Basket basket = new Basket();
             basketService.saveBasket(basket);
             user.setBasket(basket);
+            user.setEnabled(false);
             userService.saveUser(user);
             basket.setUser(user);
             basketService.saveBasket(basket);
-            return "redirect:/login";
+            VerificationDTO verificationDTO = new VerificationDTO();
+            verificationDTO.setCode(emailService.sendVerificationCode(user.getEmail()));
+            verificationDTO.setUserId(user.getId());
+            model.addAttribute("verificationDTO", verificationDTO);
+            return "verification";
         }
         RegistrationErrors.repeatedPassword = true;
         return "redirect:/registration-error";

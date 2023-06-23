@@ -14,7 +14,6 @@ public class CheckEmailValidator implements ConstraintValidator<CheckEmail,Strin
 
     @Override
     public boolean isValid(String s, ConstraintValidatorContext context) {
-        System.out.println("----------| isValid |---------- " + s);
         return s.endsWith(endOfEmail);
     }
 }

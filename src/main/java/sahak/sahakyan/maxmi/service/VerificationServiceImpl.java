@@ -10,6 +10,7 @@ public class VerificationServiceImpl implements VerificationService{
 
     @Override
     public String createVerificationCode() {
+        System.out.println("------------------| createVerificationCode |------------------");
         int min = 0;
         int max = 9;
         Random random = new Random();

@@ -9,4 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 public class VerificationDTO {
     private Integer number;
+    private Long userId;
+    private String code;
 }

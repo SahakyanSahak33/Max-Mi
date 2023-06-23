@@ -29,11 +29,10 @@ public class LoginController {
 
     @RequestMapping("/login-error")
     public String loginError(Model model) {
-        System.out.println("----------------------| /login-error.html |------------------------");
         model.addAttribute("loginError", true);
         UserDTO UserDTO = new UserDTO();
         model.addAttribute("userDTO", UserDTO);
-        return "login.html";
+        return "login";
     }
 
     /*--------| LOGIN METHOD |--------*/

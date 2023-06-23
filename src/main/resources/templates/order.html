@@ -8,9 +8,8 @@
 </head>
 <body>
 <div id="loader" class="loader"></div>
-
     <main>
-        <section>
+        <section th:if="${!isCardEqualsNull}">
             <div class="card">
                 <p>Selected Card</p>
                 <div>
@@ -55,6 +54,7 @@
             </svg>
         </a>
     </main>
+    <p th:if="${isCardEqualsNull}">Please Add Card</p>
 <script th:src="@{../assets/js/loader.js}"></script>
 </body>
 </html>

@@ -28,6 +28,11 @@ public class OrderController {
     public String order(Authentication authentication, Model model) {
         User user = userService.findByUsername(authentication.getName());
         Card card = cardService.findCardByUser(user);
+        model.addAttribute("isCardEqualsNull", false);
+        if (card == null) {
+            model.addAttribute("isCardEqualsNull", true);
+            return "order";
+        }
         Order order = new Order();
         String str = card.getCardNumber();
         model.addAttribute("order", order);

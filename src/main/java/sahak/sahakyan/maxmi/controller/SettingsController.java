@@ -31,7 +31,6 @@ public class SettingsController {
     @PreAuthorize("hasRole('USER')")
     public String dashboard(Model model, Authentication authentication) {
         System.out.println("----------------------| @GetMapping /user/settings |---------------------------");
-//        NullPointer is throwing in the next line ! --->
         User user = userService.findByUsername(authentication.getName());
         System.out.println(user);
         DashboardDTO dashboardDTO = DashboardDTO.builder()

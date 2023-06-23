@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.sql.DataSource;
 
 @Configuration
+
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -25,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/registration", "/assets/**", "/").permitAll() // Allow access to registration page, CSS, and JS files
+                .antMatchers("/registration","/verification","/verificationCheck","/assets/**", "/").permitAll() // Allow access to registration page, CSS, and JS files
                 .anyRequest().authenticated() // Require authentication for all other requests
                 .and()
                 .formLogin()
