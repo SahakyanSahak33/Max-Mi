@@ -33,4 +33,8 @@ public class Order {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "basket_id")
     private Basket basket;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

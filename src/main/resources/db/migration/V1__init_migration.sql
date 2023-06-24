@@ -70,11 +70,13 @@ CREATE TABLE user_authority (
 CREATE TABLE orders (
                         order_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
                         basket_id   BIGINT,
+                        user_id   BIGINT,
                         order_date VARCHAR(255) NOT NULL,
                         address    VARCHAR(250) NOT NULL,
                         city       VARCHAR(250) NOT NULL,
                         country    VARCHAR(250) NOT NULL,
-                        FOREIGN KEY (basket_id) REFERENCES basket(basket_id)
+                        FOREIGN KEY (basket_id) REFERENCES basket(basket_id),
+                        FOREIGN KEY (user_id) REFERENCES users(id)
 );
 CREATE TABLE basket_products
 (
@@ -95,10 +97,8 @@ CREATE TABLE liked_products
 
 SET FOREIGN_KEY_CHECKS = 1;
 
-INSERT INTO `my_db`.`authorities` (`name`)
-VALUES ('USER');
-INSERT INTO `my_db`.`authorities` (`name`)
-VALUES ('ADMIN');
+INSERT INTO `my_db`.`authorities` (`name`) VALUES ('USER');
+INSERT INTO `my_db`.`authorities` (`name`)VALUES ('ADMIN');
 
 INSERT INTO products (price, rating , product_name, discount, description, image)
 VALUES (1200, 5 , 'Iphone14 Pro', 40, 'Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro Description of Iphone 14 Pro of Iphone 14 Pro',

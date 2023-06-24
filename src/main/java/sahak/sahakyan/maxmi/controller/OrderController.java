@@ -42,10 +42,19 @@ public class OrderController {
 
     @PostMapping("/user/order")
     public String saveOrder(@ModelAttribute("order") Order order, Authentication authentication) {
-        Basket basket = basketService.findByUserId(userService.findByUsername(authentication.getName()).getId());
+        User user = userService.findByUsername(authentication.getName());
+        Basket basket = basketService.findByUserId(user.getId());
         order.setOrderDate(dateService.askDate());
         order.setBasket(basket);
+        user.addOrder(order);
+        order.setUser(user);
         orderService.saveOrder(order);
+        basket.setUser(null);
+        basket = new Basket();
+        basket.setUser(user);
+        basketService.saveBasket(basket);
+        user.setBasket(basket);
+        userService.save(user);
         return "redirect:/user/userhome";
     }
 }

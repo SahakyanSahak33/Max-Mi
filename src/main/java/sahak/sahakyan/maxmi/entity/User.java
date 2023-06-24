@@ -9,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -68,4 +69,14 @@ public class User {
     @OneToOne
     @JoinColumn(name = "basket_id")
     private Basket basket;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Order> orders;
+
+    public void addOrder(Order order) {
+        if (orders == null) {
+            orders = new ArrayList<>();
+        }
+        orders.add(order);
+    }
 }
