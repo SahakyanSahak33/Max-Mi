@@ -17,6 +17,7 @@
     <div id="loader" class="loader"></div>
     <main class="container">
         <form action="#" th:action="@{/user/card}" th:object="${cardDTO}" method="post">
+            <p th:if="${#fields.hasAnyErrors()}" class="error">Please Enter All Numbers</p>
             <div class="form__div card card-inner">
                 <div class="front">
                         <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">

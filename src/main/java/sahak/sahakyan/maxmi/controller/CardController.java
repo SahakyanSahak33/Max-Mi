@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +12,8 @@ import sahak.sahakyan.maxmi.dto.CardDTO;
 import sahak.sahakyan.maxmi.entity.Card;
 import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
@@ -35,7 +38,10 @@ public class CardController {
         return "card";
     }
     @PostMapping("/user/card")
-    public String saveCard(@ModelAttribute("cardDTO") CardDTO cardDTO, Authentication authentication) {
+    public String saveCard(@Valid CardDTO cardDTO, Authentication authentication, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "card";
+        }
         System.out.println("Card Save");
         Card card = cardService.createCard(cardDTO, userService.findByUsername(authentication.getName()));
         cardService.saveCard(card);

@@ -24,15 +24,21 @@
             </div>
             <form action="#" th:action="@{/user/order}" th:object="${order}" method="post">
                 <div class="input-box">
-                    <label for="country" class="details">Address</label>
+                    <label for="country" class="details">Country</label>
+                    <p th:if="${#fields.hasErrors('country')}" th:errorclass="country" th:errors="*{country}"
+                       th:class="${#fields.hasErrors('country')}? error"></p>
                     <input type="text" id="country" name="country" th:field="*{country}"/>
                 </div>
                 <div class="input-box">
                     <label for="city" class="details">City</label>
+                    <p th:if="${#fields.hasErrors('city')}" th:errorclass="city" th:errors="*{city}"
+                       th:class="${#fields.hasErrors('city')}? error"></p>
                     <input type="text" id="city" name="city" th:field="*{city}"/>
                 </div>
                 <div class="input-box">
                     <label for="address" class="details">Address</label>
+                    <p th:if="${#fields.hasErrors('address')}" th:errorclass="address" th:errors="*{address}"
+                       th:class="${#fields.hasErrors('address')}? error"></p>
                     <input type="text" id="address" name="address" th:field="*{address}"/>
                 </div>
                 <button class="submit">Order</button>

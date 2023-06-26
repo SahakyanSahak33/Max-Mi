@@ -1,25 +1,20 @@
 package sahak.sahakyan.maxmi.entity;
 
 import lombok.*;
-import org.hibernate.annotations.GeneratorType;
 import sahak.sahakyan.maxmi.validator.CheckEmail;
 import sahak.sahakyan.maxmi.validator.Password;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
 @AllArgsConstructor
 public class User {
     @Id

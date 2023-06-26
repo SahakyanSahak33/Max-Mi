@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import sahak.sahakyan.maxmi.entity.Card;
 import sahak.sahakyan.maxmi.entity.Order;
 import sahak.sahakyan.maxmi.entity.User;
 import sahak.sahakyan.maxmi.service.*;
+import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
@@ -41,7 +43,10 @@ public class OrderController {
     }
 
     @PostMapping("/user/order")
-    public String saveOrder(@ModelAttribute("order") Order order, Authentication authentication) {
+    public String saveOrder(@Valid @ModelAttribute("order") Order order, BindingResult bindingResult, Authentication authentication) {
+        if (bindingResult.hasErrors()) {
+            return "order";
+        }
         User user = userService.findByUsername(authentication.getName());
         Basket basket = basketService.findByUserId(user.getId());
         order.setOrderDate(dateService.askDate());
